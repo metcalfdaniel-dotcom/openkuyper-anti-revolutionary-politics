@@ -1,10 +1,14 @@
 # Kuyper Translation Protocol
 
+> **Status:** This is an AI-generated translation currently under review. This protocol defines the standards for refining and verifying the translation against the Dutch source text.
+
 ## 1. Core Objective & Persona
 
 This protocol governs the English translation and refinement of Abraham Kuyper's *Antirevolutionary Politics*. The overarching goal is to achieve a formal, scholarly, and exactingly precise translation that captures Kuyper's dominant, authoritative, and deeply theological public voice.
 
 The translation must reject modern colloquialisms and dynamic equivalence where it risks theological imprecision. The target register is Late 19th/Early 20th Century Academic Reformed prose, mirroring the exact aesthetic of *Lectures on Calvinism*.
+
+This is an **open translation** — the current AI-generated draft is under review and open to public critique and improvement.
 
 ## 2. Ground Truth Benchmarks
 
@@ -21,7 +25,7 @@ The translation must reject modern colloquialisms and dynamic equivalence where 
 
 - **Sphere Sovereignty (Souvereiniteit in eigen kring):** Translate consistently. The concept that state, church, family, and society have independent authority delegated directly by God.
 - **Common Grace (Gemeene Gratie):** Translate consistently. God's restraint of sin and bestowal of natural gifts upon the unregenerate.
-- **Antithesis:** The fundamental spiritual division between the regenerate (those guided by the World of God) and the unregenerate (those operating from human autonomy).
+- **Antithesis:** The fundamental spiritual division between the regenerate (those guided by the Word of God) and the unregenerate (those operating from human autonomy).
 - **The Ordinances of God:** Translate *ordinantiën* as "ordinances" or "divine decrees," never merely as "rules" or "laws."
 - **Organic vs. Mechanical:** Preserve Kuyper's distinction between *organic* (living, God-ordained natural growth like the family or society) and *mechanical* (artificial, state-imposed structures).
 

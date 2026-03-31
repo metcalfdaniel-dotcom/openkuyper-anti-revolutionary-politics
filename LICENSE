@@ -1,17 +1,35 @@
-# Rights, Attribution, and Fair Use
+MIT License
 
-Copyright (c) 2026 by Daniel Metcalf. All rights reserved.
+Copyright (c) 2026 Daniel Metcalf
 
-This scholarly edition of Abraham Kuyper's *Antirevolutionaire Staatkunde* (Antirevolutionary Politics) is provided for educational, research, and personal use. **Attribution is required** for any public citation or reuse of this material. Commercial reproduction, distribution, or monetization of this text—in whole or in significant part—is strictly prohibited without the express written permission of the Translator (Daniel Metcalf). Fair Dealing/Fair Use for scholarly critique and citation is encouraged.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Translation"), to deal
+in the Translation without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Translation, and to permit persons to whom the Translation is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Translation.
+
+THE TRANSLATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE TRANSLATION OR THE USE OR OTHER DEALINGS IN THE
+TRANSLATION.
+
+---
 
 ## Original Work
 
 The original Dutch text *Antirevolutionaire Staatkunde* (1916–1917) by Abraham Kuyper is in the public domain. Kuyper died in 1920, placing the original work beyond copyright in most jurisdictions.
 
-## Translation
+## This Translation
 
-This English translation and all scholarly apparatus (indices, companion volumes, annotations, editorial materials) are copyright 2026 by Daniel Metcalf.
+This English translation is an open, community-driven project. The translation text, indices, companion materials, build scripts, and all project files are released under the MIT License. You are free to use, modify, distribute, and build upon this translation for any purpose — personal, academic, commercial, or otherwise. Attribution is appreciated but not required.
 
 ## AI Disclosure
 
-This text was prepared with the assistance of advanced Artificial Intelligence systems. The core text is a human-verified translation. AI algorithms were utilized to synthesize indices, align parallel text, and generate scholarly apparatus.
+This translation was prepared with the assistance of advanced Artificial Intelligence systems. The translation is human-guided and verified. AI was used for text extraction, initial translation drafts, index synthesis, parallel text alignment, and scholarly apparatus generation.

@@ -3,8 +3,15 @@ title: "Antirevolutionary Politics: Volume III - Companion & Master Index"
 author: "Abraham Kuyper"
 translator: "Daniel Metcalf"
 date: "2026"
-subject: "Archive: Principles of Antirevolutionary Politics"
+subject: "Companion & Master Index"
+license: "MIT"
+status: "AI translation under review"
 ---
+
+> [!NOTE]
+> **Open Translation — Under Review**
+>
+> This companion volume is part of an AI-generated English translation of Abraham Kuyper's *Antirevolutionaire Staatkunde* (1916–1917). The translation is currently under review. This project is open to the public, open to critique, and open to improvement. Released under the MIT License.
 
 # VOLUME III: COMPANION & MASTER INDEX
 

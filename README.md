@@ -1,8 +1,18 @@
 # Kuyper: Antirevolutionary Politics
 
-**English translation of Abraham Kuyper's *Antirevolutionaire Staatkunde* (1916–1917)**
+**An open English translation of Abraham Kuyper's *Antirevolutionaire Staatkunde* (1916–1917)**
 
-A 3-volume scholarly edition of Abraham Kuyper's magnum opus on political theology — the mature synthesis of Neo-Calvinist thought applied to the machinery of the modern state.
+A 3-volume open translation project of Abraham Kuyper's magnum opus on political theology — the mature synthesis of Neo-Calvinist thought applied to the machinery of the modern state.
+
+**Open to the public. Open to critique. Open to improvement.**
+
+---
+
+## About This Project
+
+This is an **open translation** — not a closed scholarly edition. The entire project lives here in the open: source texts, translation drafts, build scripts, indices, and companion materials. Anyone can read, fork, critique, suggest improvements, or build their own edition from the materials here.
+
+The original Dutch text *Antirevolutionaire Staatkunde* (1916–1917) is in the public domain. This English translation and all project materials are released under the **MIT License** — use it however you want.
 
 ---
 
@@ -11,12 +21,13 @@ A 3-volume scholarly edition of Abraham Kuyper's magnum opus on political theolo
 *Antirevolutionaire Staatkunde* (Antirevolutionary Politics) is Kuyper's most systematic work of political theory. Originally published in 1916–1917, it represents the culmination of his lifelong project: articulating a Christian life-system that engages the modern state not by retreating into isolation, but by asserting the **Sphere Sovereignty** of social institutions under the ultimate Sovereignty of God.
 
 This repository contains:
-- **Dutch source texts** — original 1916–1917 editions (PDF)
-- **English translation** — full 3-volume scholarly edition (Markdown, HTML, PDF)
+- **Dutch source texts** — original 1916–1917 editions (PDF and Markdown)
+- **English translation** — full 3-volume translation (Markdown, HTML, PDF)
 - **Parallel editions** — Dutch/English side-by-side reading editions
 - **Companion volume** — encyclopedic glossary, biographical register, master index
-- **Translation protocol** — scholarly standards and stylistic constraints
+- **Translation protocol** — standards and stylistic constraints for the translation
 - **Build scripts** — PDF generation, parallel edition synthesis, NLP indexing
+- **OCR & compilation plan** — roadmap for refining the translation and producing print-ready LaTeX volumes
 
 ---
 
@@ -75,7 +86,8 @@ This repository contains:
 │   ├── Saved by Grace Alone.*            # Reference text
 │   └── The Sanctifying Work of the Hol.* # Reference text
 ├── prepend_md_rights.py                  # Rights/attribution front matter
-├── LICENSE                               # Rights & attribution
+├── OCR_AND_LATEX_PLAN.md                 # OCR options & LaTeX compilation plan
+├── LICENSE                               # MIT License
 └── README.md
 ```
 
@@ -83,7 +95,7 @@ This repository contains:
 
 ## Translation Protocol
 
-The translation follows a rigorous scholarly protocol (see `config/kuyper_translation_protocol.md`):
+The translation follows a rigorous protocol (see `config/kuyper_translation_protocol.md`):
 
 ### Voice Ground Truth
 - **Primary:** *Lectures on Calvinism* (1898 Stone Lectures) — definitive standard for Kuyper's English cadence
@@ -140,7 +152,7 @@ cd scripts && npm install
 python scripts/generate_parallel_edition.py
 ```
 
-### Generate Scholarly Master Edition
+### Generate Master Edition
 ```bash
 python scripts/generate_scholarly_master.py
 ```
@@ -164,15 +176,41 @@ bash scripts/optimize_for_pod.sh
 
 ---
 
-## Rights & Attribution
+## OCR Refinement & LaTeX Compilation
+
+See [`OCR_AND_LATEX_PLAN.md`](OCR_AND_LATEX_PLAN.md) for:
+- **Best OCR tools** for re-extracting Dutch source text (MinerU, Marker, PDFMathTranslate, PaddleOCR, and more)
+- **Translation pipeline options** using Claude, OpenAI, Gemini, or local models
+- **Systematic workflow** for working through the original text chapter by chapter
+- **LaTeX compilation plan** for producing 3 print-ready volumes with:
+  - Two appendices per volume (Theological Glossary + Biographical Register)
+  - Volume III additional appendices (Timeline, Bibliography, Translation Methodology)
+  - Master index and synopticon cross-references
+  - Print-on-demand ready PDFs
+
+---
+
+## Contributing
+
+This is an open translation. Contributions are welcome:
+
+- **Translation improvements** — spot errors, suggest better phrasing, refine theological terminology
+- **OCR refinement** — help re-extract and clean up the Dutch source text
+- **Index work** — improve the master index, add cross-references, expand the synopticon
+- **LaTeX typesetting** — help build the print-ready volumes
+- **Critique and review** — read the translation, flag issues, suggest improvements
+
+Open an issue or submit a pull request. No gatekeeping — this project exists to be improved.
+
+---
+
+## Rights & License
 
 **Original Work:** *Antirevolutionaire Staatkunde* by Abraham Kuyper (1916–1917) — public domain.
 
-**Translation & Scholarly Apparatus:** Copyright © 2026 Daniel Metcalf. All rights reserved.
+**This Translation:** MIT License. Free to use, modify, distribute, and build upon for any purpose.
 
-This edition is provided for educational, research, and personal use. Attribution is required for any public citation or reuse. Commercial reproduction is strictly prohibited without express written permission.
-
-**AI Disclosure:** This text was prepared with the assistance of advanced AI systems. The core text is a human-verified translation. AI was used for index synthesis, parallel text alignment, and scholarly apparatus generation.
+**AI Disclosure:** This translation was prepared with the assistance of advanced AI systems. The translation is human-guided and verified. AI was used for text extraction, initial translation drafts, index synthesis, parallel text alignment, and apparatus generation.
 
 ---
 
@@ -180,4 +218,4 @@ This edition is provided for educational, research, and personal use. Attributio
 
 Abraham Kuyper (1837–1920) was a Dutch statesman, theologian, journalist, and Prime Minister of the Netherlands (1901–1905). He founded the Free University of Amsterdam, the Anti-Revolutionary Party, and the Reformed Churches in the Netherlands. His political theology of **Sphere Sovereignty** remains influential in Christian democratic thought worldwide.
 
-This translation project aims to restore the monumental scope of Kuyper's political theology for a modern English-speaking audience, making his granular, principled application of Neo-Calvinist thought accessible to contemporary scholars.
+This open translation project aims to make Kuyper's granular, principled application of Neo-Calvinist thought accessible to a modern English-speaking audience — in the open, for anyone to read, critique, and improve.
