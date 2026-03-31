@@ -359,52 +359,72 @@ Print-ready PDFs → editions/
 
 ## Helpful GitHub Repositories
 
-### OCR & Dutch Text Processing
+> **Note:** This list has been reviewed and corrected against actual GitHub star counts and project relevance. The initial list missed several top-tier repos — this version is comprehensive.
 
-| Repository | Stars | Purpose | How We Use It |
-|------------|-------|---------|---------------|
-| [kba/awesome-ocr](https://github.com/kba/awesome-ocr) | 3.1k | Curated list of OCR projects | Reference for tool selection, especially for historical documents |
-| [ml6team/byt5-base-dutch-ocr-correction](https://huggingface.co/ml6team/byt5-base-dutch-ocr-correction) | — | Dutch-specific OCR correction model | Post-process Dutch extraction to fix common OCR errors |
-| [Georgetown-IR-Lab/ocr-correction](https://github.com/Georgetown-IR-Lab/ocr-correction) | — | OCR post-processing pipeline | Reference architecture for our `fix_ocr_common.py` |
-| [OpenTaal/opentaal-hunspell](https://github.com/OpenTaal/opentaal-hunspell) | 34 | Dutch spell-checking dictionary | Validate OCR output against known Dutch words |
-| [languagetool-org/languagetool](https://github.com/languagetool-org/languagetool) | 14k | Grammar/style checker (Dutch support) | Secondary validation of Dutch text quality |
+### Tier 1: Must-Study (Directly Relevant to This Project)
 
-### PDF Extraction & Translation
+| Repository | Stars | Why It Matters |
+|------------|-------|----------------|
+| [yihong0618/bilingual_book_maker](https://github.com/yihong0618/bilingual_book_maker) | 9,099 | **Most popular AI book translation tool on GitHub.** Study its glossary system, chunking strategy, and bilingual output format. 1.2k forks means massive community testing. |
+| [DiScholEd/pipeline-digital-scholarly-editions](https://github.com/DiScholEd/pipeline-digital-scholarly-editions) | 14 | **EU-funded scholarly edition pipeline.** This is the academic standard for your exact workflow: OCR → correction → encoding → publication. |
+| [sources.neocalvinism.org](https://sources.neocalvinism.org/translations.php) | — | **Your subject area.** Neo-Calvinism Research Institute already has "Suggested corrections for English translations of neo-Calvinist sources" including Bavinck. Cross-reference their corrections against your translation. |
+| [FrankensteinVariorum](https://github.com/FrankensteinVariorum) | — | Digital variorum edition collating 5 versions of Frankenstein. Multi-version text collation, parallel editions — same pattern as your Dutch/English parallel texts. |
+| [homermultitext/hmt-archive](https://github.com/homermultitext/hmt-archive) | — | Homer Multitext project: ancient Greek text → English translation pipeline with scholarly apparatus. 100+ scholar contributions. |
+| [DigitalAthenaeus](https://github.com/DigitalAthenaeus) | — | Digital edition of Athenaeus's *Deipnosophists*. Classical text translation pipeline, TEI-based. |
 
-| Repository | Stars | Purpose | How We Use It |
-|------------|-------|---------|---------------|
-| [datalab-to/marker](https://github.com/datalab-to/marker) | 33k | PDF → Markdown extraction | Alternative OCR pipeline if current extraction scores poorly |
-| [opendatalab/MinerU](https://github.com/opendatalab/MinerU) | 57k | Complex document parsing | Best-in-class for 19th-century Dutch typography with footnotes |
-| [PDFMathTranslate/PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) | 32.5k | PDF translation with layout preservation | Direct Dutch→English bilingual output option |
-| [hydropix/TranslateBooksWithLLMs](https://github.com/hydropix/TranslateBooksWithLLMs) | 555 | Book-length LLM translation | Full-book translation pipeline with resume capability |
-| [deusyu/translate-book](https://github.com/deusyu/translate-book) | 565 | Claude-powered parallel translation | Fastest option using parallel subagents |
+### Tier 2: Infrastructure & Standards (Digital Humanities)
 
-### LaTeX Book Typesetting
+| Repository | Stars | Why It Matters |
+|------------|-------|----------------|
+| [TEIC/TEI](https://github.com/TEIC/TEI) | 329 | **The Text Encoding Initiative standard.** Every major digital edition project uses it. Even if you use Markdown+LaTeX, understanding TEI's approach to scholarly apparatus (critical notes, variant readings, glossaries) will improve your edition. |
+| [TEIC/CETEIcean](https://github.com/TEIC/CETEIcean) | 175 | Renders TEI in the browser. If you ever want a web-based reading edition alongside the print PDF. |
+| [eeditiones/tei-publisher-app](https://github.com/eeditiones/tei-publisher-app) | 79 | Full scholarly edition publishing platform. Overkill for now, but shows what's possible. |
+| [dh-tech/awesome-digital-humanities](https://github.com/dh-tech/awesome-digital-humanities) | 364 | Curated list of DH tools. Browse for tools you didn't know existed. |
+| [LibreTranslate/LibreTranslate](https://github.com/LibreTranslate/LibreTranslate) | 14,100 | Self-hosted translation API. Useful as a local baseline to compare against your Claude/Gemini translations. |
 
-| Repository | Stars | Purpose | How We Use It |
-|------------|-------|---------|---------------|
-| [DGrady/book-template](https://github.com/DGrady/book-template) | 56 | Memoir class book template | Starting point for our `kuyper-common.sty` and volume structure |
-| [Belajar-Latex/MemoirTemplate](https://github.com/Belajar-Latex/MemoirTemplate) | — | Simple memoir template | Reference for chapter/section formatting patterns |
-| [langsci/langscibook](https://github.com/langsci/langscibook) | 36 | Linguistics book class | Scholarly edition patterns: footnotes, indices, glossaries |
-| [ElegantLaTeX/ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) | 2.4k | Elegant LaTeX book class | Reference for typography and layout decisions |
-| [pmichaillat/latex-book](https://github.com/pmichaillat/latex-book) | — | Minimalist academic book template | Clean, minimal approach for our scholarly edition |
-| [joaomlourenco/novathesis](https://github.com/joaomlourenco/novathesis) | 961 | Academic monograph template | Reference for frontmatter/backmatter structure |
-| [jdujava/TeXtured](https://github.com/jdujava/TeXtured) | 262 | Typographically elegant template | Reference for EB Garamond typesetting patterns |
+### Tier 3: Translation Tooling & Workflow
 
-### Markdown → LaTeX Conversion
+| Repository | Stars | Why It Matters |
+|------------|-------|----------------|
+| [xunbu/docutranslate](https://github.com/xunbu/docutranslate) | 913 | Document translation with format preservation. Supports PDF, EPUB, DOCX. Good reference for chunking strategy. |
+| [KazKozDev/book-translator](https://github.com/KazKozDev/book-translator) | 48 | **Two-stage approach:** initial translation → AI self-reflection/refinement. This is exactly the quality workflow you need. |
+| [hydropix/TranslateBooksWithLLMs](https://github.com/hydropix/TranslateBooksWithLLMs) | 555 | Book-length LLM translation with resume capability. No file size limits. |
+| [deusyu/translate-book](https://github.com/deusyu/translate-book) | 565 | Claude-powered parallel translation using subagents. Fastest option. |
+| [DavidLMS/aphra](https://github.com/DavidLMS/aphra) | 23 | Translation agent designed specifically for quality enhancement using LLMs. |
+| [soimort/translate-shell](https://github.com/soimort/translate-shell) | 8,200 | Command-line translation tool. Quick spot-check translations during audit. |
+| [argosopentech/argos-translate](https://github.com/argosopentech/argos-translate) | 4,100 | Offline neural machine translation. Local Dutch→English baseline for comparison. |
 
-| Repository | Stars | Purpose | How We Use It |
-|------------|-------|---------|---------------|
-| [thomasWeise/bookbuilderpy](https://github.com/thomasWeise/bookbuilderpy) | 8 | Python-based book compilation from Markdown | Reference architecture for our `md_to_latex.py` |
-| [rufuspollock/markdown2latex](https://github.com/rufuspollock/markdown2latex) | — | Python Markdown → LaTeX extension | Base converter logic for our custom converter |
-| [simonwaldherr/latex-ci](https://github.com/simonwaldherr/latex-ci) | — | GitHub Actions for LaTeX → PDF | CI/CD pipeline for automated book compilation |
+### Tier 4: LaTeX Book Typesetting
 
-### Translation Quality & Alignment
+| Repository | Stars | Why It Matters |
+|------------|-------|----------------|
+| [ElegantLaTeX/ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) | 2,400 | Elegant LaTeX book class. Reference for typography and layout decisions. |
+| [joaomlourenco/novathesis](https://github.com/joaomlourenco/novathesis) | 961 | Academic monograph template. Reference for frontmatter/backmatter structure. |
+| [jdujava/TeXtured](https://github.com/jdujava/TeXtured) | 262 | Typographically elegant template. Reference for EB Garamond typesetting patterns. |
+| [DGrady/book-template](https://github.com/DGrady/book-template) | 56 | Memoir class book template. Starting point for our `kuyper-common.sty` and volume structure. |
+| [langsci/langscibook](https://github.com/langsci/langscibook) | 36 | Linguistics book class. Scholarly edition patterns: footnotes, indices, glossaries. |
+| [pmichaillat/latex-book](https://github.com/pmichaillat/latex-book) | — | Minimalist academic book template. Clean, minimal approach for our scholarly edition. |
 
-| Repository | Stars | Purpose | How We Use It |
-|------------|-------|---------|---------------|
-| [soimort/translate-shell](https://github.com/soimort/translate-shell) | 8.2k | Command-line translation tool | Quick spot-check translations during audit |
-| [argosopentech/argos-translate](https://github.com/argosopentech/argos-translate) | 4.1k | Offline neural machine translation | Local Dutch→English baseline for comparison |
+### Tier 5: OCR & Dutch-Specific
+
+| Repository/Resource | Stars | Why It Matters |
+|---------------------|-------|----------------|
+| [kba/awesome-ocr](https://github.com/kba/awesome-ocr) | 3,100 | The definitive OCR project list. Reference for tool selection, especially for historical documents. |
+| [languagetool-org/languagetool](https://github.com/languagetool-org/languagetool) | 14,000 | Grammar/style checker with Dutch support. Secondary validation of Dutch text quality. |
+| [datalab-to/marker](https://github.com/datalab-to/marker) | 33,000 | PDF → Markdown extraction. Alternative OCR pipeline if current extraction scores poorly. |
+| [opendatalab/MinerU](https://github.com/opendatalab/MinerU) | 57,000 | Complex document parsing. Best-in-class for 19th-century Dutch typography with footnotes. |
+| [PDFMathTranslate/PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) | 32,500 | PDF translation with layout preservation. Direct Dutch→English bilingual output option. |
+| [ml6team/byt5-base-dutch-ocr-correction](https://huggingface.co/ml6team/byt5-base-dutch-ocr-correction) | — | Dutch-specific OCR correction model. Post-process Dutch extraction to fix common OCR errors. |
+| [OpenTaal/opentaal-hunspell](https://github.com/OpenTaal/opentaal-hunspell) | 34 | Dutch spell-checking dictionary. Validate OCR output against known Dutch words. |
+| [Georgetown-IR-Lab/ocr-correction](https://github.com/Georgetown-IR-Lab/ocr-correction) | — | OCR post-processing pipeline. Reference architecture for our `fix_ocr_common.py`. |
+
+### Tier 6: Markdown → LaTeX Conversion
+
+| Repository | Stars | Why It Matters |
+|------------|-------|----------------|
+| [thomasWeise/bookbuilderpy](https://github.com/thomasWeise/bookbuilderpy) | 8 | Python-based book compilation from Markdown. Reference architecture for our `md_to_latex.py`. |
+| [rufuspollock/markdown2latex](https://github.com/rufuspollock/markdown2latex) | — | Python Markdown → LaTeX extension. Base converter logic for our custom converter. |
+| [simonwaldherr/latex-ci](https://github.com/simonwaldherr/latex-ci) | — | GitHub Actions for LaTeX → PDF. CI/CD pipeline for automated book compilation. |
 
 ---
 
@@ -412,15 +432,20 @@ Print-ready PDFs → editions/
 
 1. **Clone reference repos** for study:
    ```bash
-   # OCR references
-   git clone https://github.com/kba/awesome-ocr.git ~/Projects/reference/awesome-ocr
-   
+   mkdir -p ~/Projects/reference
+
+   # Must-study: translation & scholarly edition
+   git clone https://github.com/yihong0618/bilingual_book_maker.git ~/Projects/reference/bilingual_book_maker
+   git clone https://github.com/DiScholEd/pipeline-digital-scholarly-editions.git ~/Projects/reference/digital-scholarly-editions
+   git clone https://github.com/FrankensteinVariorum/fv-collation.git ~/Projects/reference/frankenstein-variorum
+
    # LaTeX templates
    git clone https://github.com/DGrady/book-template.git ~/Projects/reference/book-template
    git clone https://github.com/langsci/langscibook.git ~/Projects/reference/langscibook
-   
-   # Book builder reference
-   git clone https://github.com/thomasWeise/bookbuilderpy.git ~/Projects/reference/bookbuilderpy
+   git clone https://github.com/jdujava/TeXtured.git ~/Projects/reference/TeXtured
+
+   # OCR reference
+   git clone https://github.com/kba/awesome-ocr.git ~/Projects/reference/awesome-ocr
    ```
 
 2. **Install Python dependencies**:
@@ -432,11 +457,16 @@ Print-ready PDFs → editions/
 3. **Download Dutch OCR correction model**:
    ```python
    from transformers import pipeline
-   ocr_corrector = pipeline("text2text-generation", 
+   ocr_corrector = pipeline("text2text-generation",
        model="ml6team/byt5-base-dutch-ocr-correction")
    ```
 
-4. **Build tools in priority order**:
+4. **Cross-reference Neo-Calvinism Research Institute**:
+   - Visit [sources.neocalvinism.org/translations.php](https://sources.neocalvinism.org/translations.php)
+   - Compare their suggested corrections against your English translation
+   - Incorporate their terminology fixes before finalizing
+
+5. **Build tools in priority order**:
    - `scripts/audit_ocr_quality.py` (Phase 1)
    - `scripts/audit_translation_quality.py` (Phase 2)
    - `scripts/md_to_latex.py` (Phase 3)
