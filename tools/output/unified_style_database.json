@@ -1,0 +1,2153 @@
+{
+  "project": "OpenKuyper Comprehensive Style Database",
+  "version": "1.0",
+  "texts_analyzed": [
+    "faith",
+    "lectures_on_calvinism",
+    "saved_by_grace",
+    "sanctifying_work"
+  ],
+  "aggregated_metrics": {
+    "total_sentences_across_all_texts": 5123,
+    "average_sentence_length_mean": 28.16,
+    "total_long_sentences_30plus": 1850,
+    "total_long_sentences_50plus": 639,
+    "total_periodic_estimate": 1792,
+    "periodic_percentage_mean": 34.98
+  },
+  "cross_text_patterns": {
+    "core_terminology": {
+      "faith": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 577,
+        "cluster": "Soteriology"
+      },
+      "spirit": {
+        "texts": [
+          "faith",
+          "faith",
+          "lectures_on_calvinism",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "saved_by_grace",
+          "sanctifying_work",
+          "sanctifying_work"
+        ],
+        "total_frequency": 506,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "grace": {
+        "texts": [
+          "faith",
+          "faith",
+          "lectures_on_calvinism",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "saved_by_grace",
+          "sanctifying_work",
+          "sanctifying_work"
+        ],
+        "total_frequency": 400,
+        "cluster": "Grace_and_Operation"
+      },
+      "church": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 349,
+        "cluster": "Church_and_Organism"
+      },
+      "will": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 335,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "power": {
+        "texts": [
+          "faith",
+          "faith",
+          "lectures_on_calvinism",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "saved_by_grace",
+          "sanctifying_work",
+          "sanctifying_work"
+        ],
+        "total_frequency": 308,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "sanctification": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 277,
+        "cluster": "Soteriology"
+      },
+      "nature": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 247,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "soul": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 216,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "law": {
+        "texts": [
+          "faith",
+          "faith",
+          "lectures_on_calvinism",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "saved_by_grace",
+          "sanctifying_work",
+          "sanctifying_work"
+        ],
+        "total_frequency": 210,
+        "cluster": "State_and_Politics"
+      },
+      "divine": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 209,
+        "cluster": "Godhead_and_Persons"
+      },
+      "word": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 199,
+        "cluster": "Scripture_and_Revelation"
+      },
+      "regeneration": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 159,
+        "cluster": "Soteriology"
+      },
+      "heart": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 150,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "authority": {
+        "texts": [
+          "lectures_on_calvinism",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "saved_by_grace",
+          "sanctifying_work",
+          "sanctifying_work"
+        ],
+        "total_frequency": 142,
+        "cluster": "State_and_Politics"
+      },
+      "holy spirit": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 138,
+        "cluster": "Godhead_and_Persons"
+      },
+      "scripture": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 138,
+        "cluster": "Scripture_and_Revelation"
+      },
+      "principle": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 134,
+        "cluster": "State_and_Politics"
+      },
+      "state": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 125,
+        "cluster": "State_and_Politics"
+      },
+      "lord": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 122,
+        "cluster": "Godhead_and_Persons"
+      },
+      "consciousness": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 122,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "person": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 117,
+        "cluster": "Godhead_and_Persons"
+      },
+      "confession": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 111,
+        "cluster": "Scripture_and_Revelation"
+      },
+      "christian": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 99,
+        "cluster": "Sphere_and_Sovereignty"
+      },
+      "means": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 98,
+        "cluster": "Grace_and_Operation"
+      },
+      "conversion": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 97,
+        "cluster": "Soteriology"
+      },
+      "self": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 95,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "character": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 83,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "disposition": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 77,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "sovereignty": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 75,
+        "cluster": "Sphere_and_Sovereignty"
+      },
+      "covenant": {
+        "texts": [
+          "faith",
+          "faith",
+          "lectures_on_calvinism",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "saved_by_grace",
+          "sanctifying_work",
+          "sanctifying_work"
+        ],
+        "total_frequency": 72,
+        "cluster": "Grace_and_Operation"
+      },
+      "government": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total_frequency": 70,
+        "cluster": "State_and_Politics"
+      },
+      "system": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 67,
+        "cluster": "State_and_Politics"
+      },
+      "doctrine": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 66,
+        "cluster": "Scripture_and_Revelation"
+      },
+      "sphere": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 63,
+        "cluster": "Sphere_and_Sovereignty"
+      },
+      "churches": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 61,
+        "cluster": "Church_and_Organism"
+      },
+      "faculty": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total_frequency": 61,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "reason": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 60,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "mind": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 59,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "salvation": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 56,
+        "cluster": "Soteriology"
+      },
+      "domain": {
+        "texts": [
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total_frequency": 55,
+        "cluster": "Sphere_and_Sovereignty"
+      },
+      "conscience": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 54,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "father": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 51,
+        "cluster": "Godhead_and_Persons"
+      },
+      "revolution": {
+        "texts": [
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total_frequency": 49,
+        "cluster": "State_and_Politics"
+      },
+      "inward": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 48,
+        "cluster": "Grace_and_Operation"
+      },
+      "gospel": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 47,
+        "cluster": "Scripture_and_Revelation"
+      },
+      "ego": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 40,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "dogma": {
+        "texts": [
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total_frequency": 40,
+        "cluster": "Scripture_and_Revelation"
+      },
+      "operation": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 39,
+        "cluster": "Grace_and_Operation"
+      },
+      "son": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 37,
+        "cluster": "Godhead_and_Persons"
+      },
+      "scriptures": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total_frequency": 37,
+        "cluster": "Scripture_and_Revelation"
+      },
+      "spheres": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism"
+        ],
+        "total_frequency": 36,
+        "cluster": "Sphere_and_Sovereignty"
+      },
+      "calling": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total_frequency": 35,
+        "cluster": "Soteriology"
+      },
+      "sovereign": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 32,
+        "cluster": "Sphere_and_Sovereignty"
+      },
+      "justification": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 30,
+        "cluster": "Soteriology"
+      },
+      "mediator": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 30,
+        "cluster": "Soteriology"
+      },
+      "understanding": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 30,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "preaching": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 30,
+        "cluster": "Church_and_Organism"
+      },
+      "catechism": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 26,
+        "cluster": "Scripture_and_Revelation"
+      },
+      "powers": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 26,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "election": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 25,
+        "cluster": "Soteriology"
+      },
+      "historical": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total_frequency": 23,
+        "cluster": "Sphere_and_Sovereignty"
+      },
+      "repentance": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 22,
+        "cluster": "Soteriology"
+      },
+      "instrument": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 22,
+        "cluster": "Grace_and_Operation"
+      },
+      "essence": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total_frequency": 20,
+        "cluster": "Godhead_and_Persons"
+      },
+      "creator": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 19,
+        "cluster": "Godhead_and_Persons"
+      },
+      "communion": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total_frequency": 19,
+        "cluster": "Church_and_Organism"
+      },
+      "personality": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 19,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "baptism": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 19,
+        "cluster": "Church_and_Organism"
+      },
+      "almighty": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 18,
+        "cluster": "Godhead_and_Persons"
+      },
+      "reconciliation": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 18,
+        "cluster": "Soteriology"
+      },
+      "minister": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total_frequency": 15,
+        "cluster": "Church_and_Organism"
+      },
+      "redemption": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 14,
+        "cluster": "Soteriology"
+      },
+      "affections": {
+        "texts": [
+          "faith",
+          "sanctifying_work"
+        ],
+        "total_frequency": 14,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "imagination": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 14,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "inspired": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total_frequency": 13,
+        "cluster": "Scripture_and_Revelation"
+      },
+      "external": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 13,
+        "cluster": "Grace_and_Operation"
+      },
+      "faculties": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total_frequency": 13,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "triune": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total_frequency": 11,
+        "cluster": "Godhead_and_Persons"
+      },
+      "bible": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism"
+        ],
+        "total_frequency": 10,
+        "cluster": "Scripture_and_Revelation"
+      },
+      "inspiration": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism"
+        ],
+        "total_frequency": 10,
+        "cluster": "Scripture_and_Revelation"
+      },
+      "passions": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total_frequency": 10,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "ordinance": {
+        "texts": [
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total_frequency": 10,
+        "cluster": "Scripture_and_Revelation"
+      },
+      "effectual": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 10,
+        "cluster": "Grace_and_Operation"
+      },
+      "ruler": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 9,
+        "cluster": "State_and_Politics"
+      },
+      "gracious": {
+        "texts": [
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 9,
+        "cluster": "Grace_and_Operation"
+      },
+      "ministry": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 8,
+        "cluster": "Church_and_Organism"
+      },
+      "internal": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 8,
+        "cluster": "Grace_and_Operation"
+      },
+      "atonement": {
+        "texts": [
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total_frequency": 8,
+        "cluster": "Soteriology"
+      },
+      "realm": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total_frequency": 8,
+        "cluster": "Sphere_and_Sovereignty"
+      },
+      "passion": {
+        "texts": [
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total_frequency": 8,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "mercy": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 7,
+        "cluster": "Soteriology"
+      },
+      "commandment": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 7,
+        "cluster": "Scripture_and_Revelation"
+      },
+      "testament": {
+        "texts": [
+          "faith",
+          "faith",
+          "lectures_on_calvinism",
+          "lectures_on_calvinism"
+        ],
+        "total_frequency": 6,
+        "cluster": "Grace_and_Operation"
+      },
+      "memory": {
+        "texts": [
+          "faith",
+          "sanctifying_work"
+        ],
+        "total_frequency": 6,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "channel": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 5,
+        "cluster": "Grace_and_Operation"
+      },
+      "glorification": {
+        "texts": [
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 5,
+        "cluster": "Soteriology"
+      },
+      "forgiveness": {
+        "texts": [
+          "faith",
+          "sanctifying_work"
+        ],
+        "total_frequency": 3,
+        "cluster": "Soteriology"
+      },
+      "assembly": {
+        "texts": [
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total_frequency": 3,
+        "cluster": "Church_and_Organism"
+      },
+      "synod": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 3,
+        "cluster": "Church_and_Organism"
+      },
+      "affection": {
+        "texts": [
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total_frequency": 3,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "identity": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism"
+        ],
+        "total_frequency": 2,
+        "cluster": "Anthropology_and_Psychology"
+      },
+      "trinity": {
+        "texts": [
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total_frequency": 2,
+        "cluster": "Godhead_and_Persons"
+      },
+      "pastor": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total_frequency": 2,
+        "cluster": "Church_and_Organism"
+      },
+      "administration": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total_frequency": 2,
+        "cluster": "Grace_and_Operation"
+      }
+    },
+    "core_elevated_vocabulary": {
+      "being": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 287
+      },
+      "hence": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 218
+      },
+      "principle": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 134
+      },
+      "knowledge": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 116
+      },
+      "existence": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 77
+      },
+      "thought": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 67
+      },
+      "conception": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 63
+      },
+      "reason": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 60
+      },
+      "idea": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 60
+      },
+      "ground": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 45
+      },
+      "testimony": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 40
+      },
+      "operation": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 39
+      },
+      "certainty": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total": 38
+      },
+      "judgment": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 37
+      },
+      "direct": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 31
+      },
+      "organic": {
+        "texts": [
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total": 27
+      },
+      "confidence": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 23
+      },
+      "nevertheless": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 23
+      },
+      "thereby": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total": 21
+      },
+      "essence": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total": 20
+      },
+      "immediate": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total": 19
+      },
+      "whereby": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 18
+      },
+      "foundation": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 18
+      },
+      "period": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total": 17
+      },
+      "organism": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total": 11
+      },
+      "notwithstanding": {
+        "texts": [
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total": 10
+      },
+      "member": {
+        "texts": [
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total": 10
+      },
+      "persuasion": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total": 9
+      },
+      "structure": {
+        "texts": [
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total": 9
+      },
+      "perception": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism"
+        ],
+        "total": 8
+      },
+      "conclusion": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total": 8
+      },
+      "basis": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 8
+      },
+      "thereof": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 7
+      },
+      "assurance": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total": 6
+      },
+      "wherewith": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total": 6
+      },
+      "therein": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 6
+      },
+      "herein": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total": 6
+      },
+      "lofty": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total": 6
+      },
+      "wherein": {
+        "texts": [
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total": 5
+      },
+      "proposition": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total": 4
+      },
+      "hereby": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total": 3
+      },
+      "magnificent": {
+        "texts": [
+          "faith",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 3
+      },
+      "sentence": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total": 3
+      },
+      "indirect": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total": 3
+      },
+      "notion": {
+        "texts": [
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 3
+      },
+      "clause": {
+        "texts": [
+          "faith",
+          "sanctifying_work"
+        ],
+        "total": 2
+      }
+    },
+    "core_connectives": {
+      "and": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 5189,
+        "category": "additive"
+      },
+      "but": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 1482,
+        "category": "adversative"
+      },
+      "for": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 1083,
+        "category": "causal"
+      },
+      "also": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 282,
+        "category": "additive"
+      },
+      "if": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 276,
+        "category": "conditional"
+      },
+      "hence": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 218,
+        "category": "causal"
+      },
+      "therefore": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 217,
+        "category": "causal"
+      },
+      "yet": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 165,
+        "category": "adversative"
+      },
+      "thus": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 150,
+        "category": "causal"
+      },
+      "because": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 119,
+        "category": "causal"
+      },
+      "however": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 92,
+        "category": "adversative"
+      },
+      "while": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 88,
+        "category": "concessive"
+      },
+      "though": {
+        "texts": [
+          "lectures_on_calvinism",
+          "lectures_on_calvinism"
+        ],
+        "total": 86,
+        "category": "concessive"
+      },
+      "since": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 78,
+        "category": "causal"
+      },
+      "rather": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 51,
+        "category": "contrastive"
+      },
+      "viz": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 45,
+        "category": "illustrative"
+      },
+      "finally": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 42,
+        "category": "summative"
+      },
+      "on the contrary": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 39,
+        "category": "contrastive"
+      },
+      "although": {
+        "texts": [
+          "lectures_on_calvinism",
+          "lectures_on_calvinism"
+        ],
+        "total": 36,
+        "category": "concessive"
+      },
+      "on the other hand": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 28,
+        "category": "contrastive"
+      },
+      "nevertheless": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 23,
+        "category": "adversative"
+      },
+      "moreover": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 20,
+        "category": "additive"
+      },
+      "consequently": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total": 20,
+        "category": "causal"
+      },
+      "unless": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 17,
+        "category": "conditional"
+      },
+      "lastly": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace",
+          "sanctifying_work"
+        ],
+        "total": 15,
+        "category": "summative"
+      },
+      "provided": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total": 12,
+        "category": "conditional"
+      },
+      "notwithstanding": {
+        "texts": [
+          "lectures_on_calvinism",
+          "sanctifying_work"
+        ],
+        "total": 10,
+        "category": "adversative"
+      },
+      "likewise": {
+        "texts": [
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total": 6,
+        "category": "additive"
+      },
+      "for instance": {
+        "texts": [
+          "faith",
+          "lectures_on_calvinism",
+          "saved_by_grace"
+        ],
+        "total": 5,
+        "category": "illustrative"
+      }
+    }
+  },
+  "terminology_glossary": {},
+  "style_rules": [
+    {
+      "rule": "Preserve periodic sentence structure",
+      "rationale": "Kuyper uses periodic sentences in ~35.0% of sentences. Main clause should often be delayed.",
+      "priority": "critical",
+      "example": "That we, standing as we do upon the foundation of Scripture, must nevertheless confess..."
+    },
+    {
+      "rule": "Maintain elevated sentence length",
+      "rationale": "Average sentence length across texts is 28.16 words. Modern English averages 15-20.",
+      "priority": "critical",
+      "example": null
+    },
+    {
+      "rule": "Use archaic connectives and adverbials",
+      "rationale": "'Hence', 'whereby', 'therein', 'nevertheless' are characteristic markers of Kuyper's prose.",
+      "priority": "high",
+      "example": "Hence it follows that..."
+    },
+    {
+      "rule": "Preserve theological precision in terminology",
+      "rationale": "Terms like 'justification', 'sanctification', 'covenant' have specific technical meanings that must not be modernized.",
+      "priority": "critical",
+      "example": "The covenant of grace"
+    },
+    {
+      "rule": "Maintain sweeping architectonic scope",
+      "rationale": "Kuyper moves from particular to universal, from historical to systematic. Do not truncate grand concluding clauses.",
+      "priority": "high",
+      "example": "...and thus we see how all things work together for the consummation of His eternal purpose."
+    },
+    {
+      "rule": "Use semicolons for clause coordination",
+      "rationale": "Kuyper uses semicolons to coordinate related independent clauses within sweeping sentences.",
+      "priority": "medium",
+      "example": "The state has its own sphere; the church has hers; and neither may trespass upon the other."
+    },
+    {
+      "rule": "Preserve parenthetical asides",
+      "rationale": "Kuyper uses parenthetical qualifications frequently. These add nuance and qualification.",
+      "priority": "medium",
+      "example": "The principle (and here we touch the very heart of the matter) is..."
+    },
+    {
+      "rule": "Do not modernize biblical citations",
+      "rationale": "Preserve traditional abbreviations and formats (e.g., 'Rom. viii. 28', not 'Romans 8:28').",
+      "priority": "medium",
+      "example": "Cf. Eph. ii. 8"
+    },
+    {
+      "rule": "Maintain Kuyper's use of first-person plural",
+      "rationale": "Kuyper frequently uses 'we', 'our', 'us' to create solidarity with the reader and the Reformed tradition.",
+      "priority": "high",
+      "example": "We confess... We maintain..."
+    },
+    {
+      "rule": "Preserve modal particles and rhetorical grounding",
+      "rationale": "Dutch particles like 'immers', 'wel', 'toch' carry modal weight. English must capture the grounding/qualification, not just the propositional content.",
+      "priority": "high",
+      "example": "For (immers) we must not forget..."
+    }
+  ],
+  "dutch_to_english_mapping": {
+    "geloof": {
+      "english": "faith",
+      "confidence": "high",
+      "contexts": [
+        "Soteriology",
+        "Faith_and_Consciousness"
+      ]
+    },
+    "genade": {
+      "english": "grace",
+      "confidence": "high",
+      "contexts": [
+        "Soteriology",
+        "Grace_and_Operation"
+      ]
+    },
+    "heiligmaking": {
+      "english": "sanctification",
+      "confidence": "high",
+      "contexts": [
+        "Soteriology"
+      ]
+    },
+    "rechtvaardiging": {
+      "english": "justification",
+      "confidence": "high",
+      "contexts": [
+        "Soteriology"
+      ]
+    },
+    "verlossing": {
+      "english": "salvation",
+      "confidence": "high",
+      "contexts": [
+        "Soteriology"
+      ]
+    },
+    "verzoening": {
+      "english": "atonement",
+      "confidence": "high",
+      "contexts": [
+        "Soteriology"
+      ]
+    },
+    "verkiezing": {
+      "english": "election",
+      "confidence": "high",
+      "contexts": [
+        "Soteriology"
+      ]
+    },
+    "voorzienigheid": {
+      "english": "providence",
+      "confidence": "high",
+      "contexts": [
+        "Godhead_and_Persons"
+      ]
+    },
+    "openbaring": {
+      "english": "revelation",
+      "confidence": "high",
+      "contexts": [
+        "Scripture_and_Revelation"
+      ]
+    },
+    "schrift": {
+      "english": "Scripture",
+      "confidence": "high",
+      "contexts": [
+        "Scripture_and_Revelation"
+      ]
+    },
+    "verbond": {
+      "english": "covenant",
+      "confidence": "high",
+      "contexts": [
+        "Scripture_and_Revelation"
+      ]
+    },
+    "kerk": {
+      "english": "church",
+      "confidence": "high",
+      "contexts": [
+        "Church_and_Organism"
+      ]
+    },
+    "sacrament": {
+      "english": "sacrament",
+      "confidence": "high",
+      "contexts": [
+        "Church_and_Organism"
+      ]
+    },
+    "doop": {
+      "english": "baptism",
+      "confidence": "high",
+      "contexts": [
+        "Church_and_Organism"
+      ]
+    },
+    "hemelvaart": {
+      "english": "ascension",
+      "confidence": "high",
+      "contexts": [
+        "Godhead_and_Persons"
+      ]
+    },
+    "wederkomst": {
+      "english": "second coming",
+      "confidence": "high",
+      "contexts": [
+        "Eschatology"
+      ]
+    },
+    "zonde": {
+      "english": "sin",
+      "confidence": "high",
+      "contexts": [
+        "Hamartiology"
+      ]
+    },
+    "schuld": {
+      "english": "guilt",
+      "confidence": "high",
+      "contexts": [
+        "Soteriology"
+      ]
+    },
+    "sfeer": {
+      "english": "sphere",
+      "confidence": "high",
+      "contexts": [
+        "Sphere_and_Sovereignty"
+      ]
+    },
+    "soevereiniteit": {
+      "english": "sovereignty",
+      "confidence": "high",
+      "contexts": [
+        "Sphere_and_Sovereignty",
+        "State_and_Politics"
+      ]
+    },
+    "soevereiniteit in eigen kring": {
+      "english": "sphere sovereignty",
+      "confidence": "high",
+      "contexts": [
+        "Sphere_and_Sovereignty"
+      ]
+    },
+    "staat": {
+      "english": "state",
+      "confidence": "high",
+      "contexts": [
+        "State_and_Politics"
+      ]
+    },
+    "overheid": {
+      "english": "government",
+      "confidence": "high",
+      "contexts": [
+        "State_and_Politics"
+      ]
+    },
+    "revolutie": {
+      "english": "revolution",
+      "confidence": "high",
+      "contexts": [
+        "State_and_Politics"
+      ]
+    },
+    "antirevolutionair": {
+      "english": "antirevolutionary",
+      "confidence": "high",
+      "contexts": [
+        "State_and_Politics"
+      ]
+    },
+    "beginsel": {
+      "english": "principle",
+      "confidence": "high",
+      "contexts": [
+        "State_and_Politics",
+        "Sphere_and_Sovereignty"
+      ]
+    },
+    "grondwet": {
+      "english": "constitution",
+      "confidence": "high",
+      "contexts": [
+        "State_and_Politics"
+      ]
+    },
+    "recht": {
+      "english": "law / right",
+      "confidence": "medium",
+      "contexts": [
+        "State_and_Politics"
+      ],
+      "note": "Polysemous: 'recht' means both law and right/justice"
+    },
+    "volk": {
+      "english": "people / nation",
+      "confidence": "medium",
+      "contexts": [
+        "State_and_Politics"
+      ],
+      "note": "Often 'people' in organic sense, not just populace"
+    },
+    "natie": {
+      "english": "nation",
+      "confidence": "high",
+      "contexts": [
+        "State_and_Politics"
+      ]
+    },
+    "maatschappij": {
+      "english": "society",
+      "confidence": "high",
+      "contexts": [
+        "State_and_Politics"
+      ]
+    },
+    "gezin": {
+      "english": "family",
+      "confidence": "high",
+      "contexts": [
+        "Sphere_and_Sovereignty"
+      ]
+    },
+    "school": {
+      "english": "school",
+      "confidence": "high",
+      "contexts": [
+        "Sphere_and_Sovereignty"
+      ]
+    },
+    "ziel": {
+      "english": "soul",
+      "confidence": "high",
+      "contexts": [
+        "Anthropology_and_Psychology"
+      ]
+    },
+    "geest": {
+      "english": "spirit",
+      "confidence": "high",
+      "contexts": [
+        "Anthropology_and_Psychology",
+        "Godhead_and_Persons"
+      ],
+      "note": "Polysemous: can refer to human spirit or Holy Spirit depending on capitalization"
+    },
+    "hart": {
+      "english": "heart",
+      "confidence": "high",
+      "contexts": [
+        "Anthropology_and_Psychology"
+      ]
+    },
+    "geweten": {
+      "english": "conscience",
+      "confidence": "high",
+      "contexts": [
+        "Anthropology_and_Psychology"
+      ]
+    },
+    "bewustzijn": {
+      "english": "consciousness",
+      "confidence": "high",
+      "contexts": [
+        "Anthropology_and_Psychology"
+      ]
+    },
+    "vermogen": {
+      "english": "faculty / power",
+      "confidence": "medium",
+      "contexts": [
+        "Anthropology_and_Psychology"
+      ]
+    },
+    "wil": {
+      "english": "will",
+      "confidence": "high",
+      "contexts": [
+        "Anthropology_and_Psychology"
+      ]
+    },
+    "verstand": {
+      "english": "intellect / understanding",
+      "confidence": "medium",
+      "contexts": [
+        "Anthropology_and_Psychology"
+      ]
+    },
+    "natuur": {
+      "english": "nature",
+      "confidence": "high",
+      "contexts": [
+        "Anthropology_and_Psychology"
+      ]
+    },
+    "algemeene genade": {
+      "english": "common grace",
+      "confidence": "high",
+      "contexts": [
+        "Grace_and_Operation"
+      ]
+    },
+    "bijzondere genade": {
+      "english": "particular grace / special grace",
+      "confidence": "high",
+      "contexts": [
+        "Grace_and_Operation"
+      ]
+    },
+    "levenssysteem": {
+      "english": "life-system / life and thought system",
+      "confidence": "high",
+      "contexts": [
+        "Sphere_and_Sovereignty"
+      ]
+    },
+    "wereldbeschouwing": {
+      "english": "worldview / world-and-life view",
+      "confidence": "high",
+      "contexts": [
+        "Sphere_and_Sovereignty"
+      ]
+    },
+    "gereformeerd": {
+      "english": "Reformed / Calvinistic",
+      "confidence": "high",
+      "contexts": [
+        "Church_and_Organism"
+      ]
+    },
+    "calvinistisch": {
+      "english": "Calvinistic",
+      "confidence": "high",
+      "contexts": [
+        "Church_and_Organism"
+      ]
+    },
+    "katholiek": {
+      "english": "catholic / universal",
+      "confidence": "medium",
+      "contexts": [
+        "Church_and_Organism"
+      ],
+      "note": "Often means universal, not Roman Catholic"
+    },
+    "daarom": {
+      "english": "therefore / hence",
+      "confidence": "high",
+      "contexts": [
+        "Rhetorical"
+      ]
+    },
+    "zodat": {
+      "english": "so that",
+      "confidence": "high",
+      "contexts": [
+        "Rhetorical"
+      ]
+    },
+    "echter": {
+      "english": "however / yet",
+      "confidence": "high",
+      "contexts": [
+        "Rhetorical"
+      ]
+    },
+    "immers": {
+      "english": "for / since / indeed",
+      "confidence": "medium",
+      "contexts": [
+        "Rhetorical"
+      ],
+      "note": "Kuyper uses 'immers' frequently for causal grounding"
+    },
+    "namelijk": {
+      "english": "namely / that is to say",
+      "confidence": "high",
+      "contexts": [
+        "Rhetorical"
+      ]
+    },
+    "wel": {
+      "english": "indeed / truly / certainly",
+      "confidence": "medium",
+      "contexts": [
+        "Rhetorical"
+      ],
+      "note": "Modal particle, often concessive"
+    },
+    "toch": {
+      "english": "yet / still / nevertheless",
+      "confidence": "medium",
+      "contexts": [
+        "Rhetorical"
+      ]
+    }
+  }
+}

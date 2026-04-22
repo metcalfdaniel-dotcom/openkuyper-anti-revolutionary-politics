@@ -16,32 +16,32 @@ import pdfplumber
 # CONFIGURATION
 # =============================================================================
 
-REFERENCE_DIR = Path(__file__).parent
-OUTPUT_DIR = REFERENCE_DIR / "output"
+REFERENCE_DIR = Path(__file__).parent.parent / "reference"
+OUTPUT_DIR = Path(__file__).parent / "output"
 OUTPUT_DIR.mkdir(exist_ok=True)
 
 # Target texts
 TEXTS = {
     "faith": {
-        "file": "Faith_-_Abraham_Kuyper.txt",
+        "file": "Faith - Abraham Kuyper.txt",
         "format": "txt",
         "title": "Faith",
         "year": 1905,
     },
     "lectures_on_calvinism": {
-        "file": "Lectures_on_Calvinism.pdf",
+        "file": "Lectures on Calvinism - Abraham Kuyper.pdf",
         "format": "pdf",
         "title": "Lectures on Calvinism",
         "year": 1898,
     },
     "saved_by_grace": {
-        "file": "Saved_by_Grace_Alone.pdf",
-        "format": "pdf", 
+        "file": "Saved by Grace Alone - Abraham Kuyper.pdf",
+        "format": "pdf",
         "title": "Saved by Grace Alone",
         "year": 1915,
     },
     "sanctifying_work": {
-        "file": "The_Sanctifying_Work_of_the_Holy_Spirit.pdf",
+        "file": "The Sanctifying Work of the Hol - Abraham Kuyper.pdf",
         "format": "pdf",
         "title": "The Sanctifying Work of the Holy Spirit",
         "year": 1895,
