@@ -41,10 +41,6 @@ This repository contains:
 ├── source-materials/
 │   ├── antirevolutionai01kuyp.pdf        # Dutch Vol. 1 (original, 37MB)
 │   ├── antirevolutiona02kuyp.pdf         # Dutch Vol. 2 (original, 33MB)
-│   ├── lectures_on_calvinism.*           # Stone Lectures (voice ground truth)
-│   ├── holy_spirit.*                     # Work of the Holy Spirit (terminology)
-│   ├── to_be_near_unto_god.*             # To Be Near Unto God (terminology)
-│   └── compendium.md                     # Computational theology reference
 ├── editions/
 │   ├── Kuyper_Antirevolutionary_Politics_Vol1_FULL.md    # English Vol. 1
 │   ├── Kuyper_Antirevolutionary_Politics_Vol2_FULL.md    # English Vol. 2
@@ -86,6 +82,7 @@ This repository contains:
 │   ├── Lectures on Calvinism.*           # Stone Lectures (ground truth)
 │   ├── Saved by Grace Alone.*            # Reference text
 │   └── The Sanctifying Work of the Hol.* # Reference text
+    └── compendium.md                     # Computational theology reference
 ├── prepend_md_rights.py                  # Rights/attribution front matter
 ├── OCR_AND_LATEX_PLAN.md                 # OCR options & LaTeX compilation plan
 ├── LICENSE                               # MIT License
