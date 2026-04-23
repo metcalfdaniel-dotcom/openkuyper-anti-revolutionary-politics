@@ -20,7 +20,7 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import Optional
 
-import google.generativeai as genai
+from google import genai
 
 # =============================================================================
 # STYLE DATABASE (embedded)
@@ -150,15 +150,14 @@ class DraftResult:
 class DraftGenerator:
     """Generates multiple translation drafts from OCR'd Dutch text."""
     
-    def __init__(self, model_name: str = "gemini-2.5-flash", temperature: float = 0.1):
+    def __init__(self, model_name: str = "gemini-2.0-flash", temperature: float = 0.1):
         self.model_name = model_name
         self.temperature = temperature
-        self.model_a = None
-        self.model_b = None
+        self.client = None
         self._setup_models()
     
     def _setup_models(self):
-        """Configure Gemini models with different system prompts."""
+        """Configure Gemini models using the google-genai SDK."""
         api_key = os.environ.get("GOOGLE_API_KEY")
         if not api_key:
             config_path = Path.home() / ".config" / "opencode" / "opencode.json"
@@ -167,26 +166,76 @@ class DraftGenerator:
                     config = json.load(f)
                 api_key = config["provider"]["google"]["options"]["apiKey"]
         
-        genai.configure(api_key=api_key)
+        self.client = genai.Client(api_key=api_key)
+
+    def generate_draft_a(self, dutch_text: str, page_context: str = "") -> DraftResult:
+        """Generate structural/literal Draft A."""
+        import time
+        start = time.time()
         
-        self.model_a = genai.GenerativeModel(
-            model_name=self.model_name,
-            generation_config={
-                "temperature": self.temperature,
-                "max_output_tokens": 8192,
-                "response_mime_type": "application/json",
-            },
-            system_instruction=DRAFT_A_SYSTEM_PROMPT,
+        prompt = self._build_prompt(dutch_text, page_context)
+        response = self.client.models.generate_content(
+            model=self.model_name,
+            config=genai.types.GenerateContentConfig(
+                system_instruction=DRAFT_A_SYSTEM_PROMPT,
+                temperature=self.temperature,
+                max_output_tokens=8192,
+                response_mime_type="application/json",
+            ),
+            contents=prompt
         )
         
-        self.model_b = genai.GenerativeModel(
-            model_name=self.model_name,
-            generation_config={
-                "temperature": self.temperature + 0.1,  # Slightly higher temp for voice variety
-                "max_output_tokens": 8192,
-                "response_mime_type": "application/json",
-            },
-            system_instruction=DRAFT_B_SYSTEM_PROMPT,
+        elapsed = time.time() - start
+        data = self._parse_json_response(response.text)
+        
+        input_tokens = response.usage_metadata.prompt_token_count if response.usage_metadata else 0
+        output_tokens = response.usage_metadata.candidates_token_count if response.usage_metadata else 0
+        cost = (input_tokens / 1_000_000 * 0.15) + (output_tokens / 1_000_000 * 0.60)
+        
+        return DraftResult(
+            draft_label="A",
+            translation=data.get("translation", ""),
+            notes=data.get("terminology_notes", ""),
+            uncertain_phrases=data.get("uncertain_phrases", []),
+            input_tokens=input_tokens,
+            output_tokens=output_tokens,
+            cost_usd=cost,
+            processing_time_sec=elapsed,
+        )
+    
+    def generate_draft_b(self, dutch_text: str, page_context: str = "") -> DraftResult:
+        """Generate voice-optimized Draft B."""
+        import time
+        start = time.time()
+        
+        prompt = self._build_prompt(dutch_text, page_context)
+        response = self.client.models.generate_content(
+            model=self.model_name,
+            config=genai.types.GenerateContentConfig(
+                system_instruction=DRAFT_B_SYSTEM_PROMPT,
+                temperature=self.temperature + 0.1,
+                max_output_tokens=8192,
+                response_mime_type="application/json",
+            ),
+            contents=prompt
+        )
+        
+        elapsed = time.time() - start
+        data = self._parse_json_response(response.text)
+        
+        input_tokens = response.usage_metadata.prompt_token_count if response.usage_metadata else 0
+        output_tokens = response.usage_metadata.candidates_token_count if response.usage_metadata else 0
+        cost = (input_tokens / 1_000_000 * 0.15) + (output_tokens / 1_000_000 * 0.60)
+        
+        return DraftResult(
+            draft_label="B",
+            translation=data.get("translation", ""),
+            notes=data.get("voice_notes", ""),
+            uncertain_phrases=data.get("uncertain_phrases", []),
+            input_tokens=input_tokens,
+            output_tokens=output_tokens,
+            cost_usd=cost,
+            processing_time_sec=elapsed,
         )
     
     def generate_draft_a(self, dutch_text: str, page_context: str = "") -> DraftResult:

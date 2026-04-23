@@ -20,7 +20,7 @@ from dataclasses import dataclass, asdict
 from typing import Optional
 from io import BytesIO
 
-import google.generativeai as genai
+from google.genai import Client, types
 from PIL import Image, ImageEnhance
 from pdf2image import convert_from_path
 
@@ -322,25 +322,22 @@ def load_api_key() -> str:
 def setup_gemini():
     """Configure Gemini API."""
     api_key = load_api_key()
-    genai.configure(api_key=api_key)
+    client = Client(api_key=api_key)
     
-    model = genai.GenerativeModel(
-        model_name=GEMINI_MODEL,
-        generation_config={
-            "temperature": GEMINI_TEMPERATURE,
-            "max_output_tokens": GEMINI_MAX_OUTPUT_TOKENS,
-            "response_mime_type": "application/json",
-        },
+    config = types.GenerateContentConfig(
+        temperature=GEMINI_TEMPERATURE,
+        max_output_tokens=GEMINI_MAX_OUTPUT_TOKENS,
+        response_mime_type="application/json",
         system_instruction=SYSTEM_PROMPT,
     )
-    return model
+    return client, config
 
 
-def translate_page(model, image_bytes: bytes, page_label: str) -> TranslationResult:
+def translate_page(client, config, image_bytes: bytes, page_label: str) -> TranslationResult:
     """Send a page image to Gemini and get structured translation."""
     start_time = time.time()
     
-    image_part = {"mime_type": "image/jpeg", "data": image_bytes}
+    image = Image.open(BytesIO(image_bytes))
     
     # The user prompt is minimal since the system instruction carries the heavy context
     user_prompt = (
@@ -349,7 +346,11 @@ def translate_page(model, image_bytes: bytes, page_label: str) -> TranslationRes
         "Output valid JSON with keys: page_number, dutch_ocr, english_translation, unclear_words, notes."
     )
     
-    response = model.generate_content([user_prompt, image_part])
+    response = client.models.generate_content(
+        model=GEMINI_MODEL,
+        contents=[user_prompt, image],
+        config=config,
+    )
     
     elapsed = time.time() - start_time
     
@@ -398,7 +399,7 @@ def process_pages(
     dry_run: bool = False,
 ) -> list[TranslationResult]:
     """Process a range of pages from a PDF."""
-    model = setup_gemini()
+    client, config = setup_gemini()
     results = []
     
     print(f"Processing pages {start_page}–{end_page} from {pdf_path.name}")
@@ -431,7 +432,7 @@ def process_pages(
             image_bytes = image_to_bytes(processed)
             
             # Call Gemini
-            result = translate_page(model, image_bytes, page_label)
+            result = translate_page(client, config, image_bytes, page_label)
             results.append(result)
             tracker.add(result.input_tokens, result.output_tokens)
             

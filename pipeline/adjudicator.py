@@ -18,7 +18,10 @@ from pathlib import Path
 from dataclasses import dataclass, asdict
 from typing import Optional
 
-import google.generativeai as genai
+from google import genai
+
+@dataclass
+class DraftSet:
 
 
 @dataclass
@@ -127,25 +130,10 @@ class Adjudicator:
     
     def __init__(self, api_key: Optional[str] = None):
         self.api_key = api_key or self._load_api_key()
-        genai.configure(api_key=self.api_key)
+        self.client = genai.Client(api_key=self.api_key)
         
-        # Three model instances with different system instructions
-        self.draft_a_model = genai.GenerativeModel(
-            model_name="gemini-2.5-flash",
-            generation_config={"temperature": 0.2, "max_output_tokens": 4096},
-            system_instruction=DRAFT_A_SYSTEM,
-        )
-        self.draft_b_model = genai.GenerativeModel(
-            model_name="gemini-2.5-flash",
-            generation_config={"temperature": 0.7, "max_output_tokens": 4096},
-            system_instruction=DRAFT_B_SYSTEM,
-        )
-        self.judge_model = genai.GenerativeModel(
-            model_name="gemini-2.5-flash",
-            generation_config={"temperature": 0.1, "max_output_tokens": 4096, "response_mime_type": "application/json"},
-            system_instruction=ADJUDICATION_SYSTEM_PROMPT,
-        )
-    
+        self.model_name = "gemini-2.0-flash" # Using 2.0 for better performance
+        
     def _load_api_key(self) -> str:
         key = os.environ.get("GOOGLE_API_KEY")
         if key:
@@ -163,16 +151,28 @@ class Adjudicator:
         
         # Draft A: Faithful/periodic
         print("  Generating Draft A (faithful/periodic)...", end=" ", flush=True)
-        resp_a = self.draft_a_model.generate_content(
-            f"Translate this Dutch text into English following the voice standards:\n\n{dutch_text}"
+        resp_a = self.client.models.generate_content(
+            model=self.model_name,
+            config=genai.types.GenerateContentConfig(
+                system_instruction=DRAFT_A_SYSTEM_PROMPT,
+                temperature=0.2,
+                max_output_tokens=4096
+            ),
+            contents=f"Translate this Dutch text into English following the voice standards:\n\n{dutch_text}"
         )
         draft_a = resp_a.text
         print("OK")
         
         # Draft B: Literal/gloss
         print("  Generating Draft B (literal/gloss)...", end=" ", flush=True)
-        resp_b = self.draft_b_model.generate_content(
-            f"Provide a literal word-for-word translation of this Dutch text:\n\n{dutch_text}"
+        resp_b = self.client.models.generate_content(
+            model=self.model_name,
+            config=genai.types.GenerateContentConfig(
+                system_instruction=DRAFT_B_SYSTEM_PROMPT,
+                temperature=0.7,
+                max_output_tokens=4096
+            ),
+            contents=f"Provide a literal word-for-word translation of this Dutch text:\n\n{dutch_text}"
         )
         draft_b = resp_b.text
         print("OK")
@@ -191,7 +191,16 @@ class Adjudicator:
         
         prompt = self._build_adjudication_prompt(drafts)
         
-        resp = self.judge_model.generate_content(prompt)
+        resp = self.client.models.generate_content(
+            model=self.model_name,
+            config=genai.types.GenerateContentConfig(
+                system_instruction=ADJUDICATION_SYSTEM_PROMPT,
+                temperature=0.1,
+                max_output_tokens=4096,
+                response_mime_type="application/json"
+            ),
+            contents=prompt
+        )
         
         # Parse JSON response
         try:

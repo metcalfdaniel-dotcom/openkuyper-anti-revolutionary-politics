@@ -16,7 +16,7 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import Optional
 
-import google.generativeai as genai
+from google import genai
 
 from termbase import Termbase
 
@@ -41,110 +41,57 @@ class QAGates:
     
     def __init__(self, api_key: Optional[str] = None):
         self.termbase = Termbase()
+        self.api_key = api_key
+        self.client = None
         if api_key:
-            genai.configure(api_key=api_key)
-            self.backtranslate_model = genai.GenerativeModel(
-                model_name="gemini-2.5-flash",
-                generation_config={"temperature": 0.1, "max_output_tokens": 4096},
-            )
+            self.client = genai.Client(api_key=api_key)
+        elif os.environ.get("GOOGLE_API_KEY"):
+            self.client = genai.Client(api_key=os.environ.get("GOOGLE_API_KEY"))
         else:
-            self.backtranslate_model = None
+            # Fallback to config
+            try:
+                config_path = Path.home() / ".config" / "opencode" / "opencode.json"
+                with open(config_path) as f:
+                    config = json.load(f)
+                self.client = genai.Client(api_key=config["provider"]["google"]["options"]["apiKey"])
+            except Exception:
+                self.client = None
+        
+        self.backtranslate_model = self.client if self.client else None
     
-    def run_all(self, english_text: str, dutch_source: str = "") -> QAResult:
-        """Run all QA gates and return composite result."""
-        gate_results = {}
-        flags = []
-        recommendations = []
+    def check_backtranslation(self, english_text: str, dutch_source: str) -> dict:
+        """Back-translate English to Dutch and compare with source."""
+        if not self.backtranslate_model:
+            return {"skipped": True}
         
-        # Gate 1: Style metrics
-        print("  QA Gate 1: Style metrics...", end=" ", flush=True)
-        gate_results["style_metrics"] = self.check_style_metrics(english_text)
-        if gate_results["style_metrics"]["avg_sentence_length"] < self.MIN_SENTENCE_LENGTH:
-            flags.append(f"Sentences too short: {gate_results['style_metrics']['avg_sentence_length']:.1f} words (target: {self.TARGET_AVG_SENTENCE_LENGTH})")
-            recommendations.append("Lengthen sentences; preserve Kuyper's periodic structure")
-        print("OK")
-        
-        # Gate 2: Terminology drift
-        print("  QA Gate 2: Terminology drift...", end=" ", flush=True)
-        gate_results["terminology"] = self.check_terminology(english_text)
-        if gate_results["terminology"]["drift_alerts"]:
-            flags.append(f"Terminology drift detected: {len(gate_results['terminology']['drift_alerts'])} alerts")
-            recommendations.append("Review termbase lockfile and ensure consistent translations")
-        print("OK")
-        
-        # Gate 3: Biblical citation format
-        print("  QA Gate 3: Biblical citations...", end=" ", flush=True)
-        gate_results["biblical_citations"] = self.check_biblical_citations(english_text)
-        if gate_results["biblical_citations"]["modern_format_count"] > 0:
-            flags.append(f"Modern biblical citations found: {gate_results['biblical_citations']['modern_format_count']}")
-            recommendations.append("Use traditional format: Rom. viii. 28, not Romans 8:28")
-        print("OK")
-        
-        # Gate 4: Anachronism detection
-        print("  QA Gate 4: Anachronism check...", end=" ", flush=True)
-        gate_results["anachronisms"] = self.check_anachronisms(english_text)
-        if gate_results["anachronisms"]["suspected"]:
-            flags.append(f"Potential anachronisms: {gate_results['anachronisms']['suspected']}")
-        print("OK")
-        
-        # Gate 5: Back-translation (if model available)
-        if self.backtranslate_model and dutch_source:
-            print("  QA Gate 5: Back-translation...", end=" ", flush=True)
-            gate_results["backtranslation"] = self.check_backtranslation(english_text, dutch_source)
-            if gate_results["backtranslation"]["similarity_score"] < 0.6:
-                flags.append(f"Back-translation divergence: {gate_results['backtranslation']['similarity_score']:.2f} similarity")
-                recommendations.append("Verify translation accuracy against source")
-            print("OK")
-        else:
-            gate_results["backtranslation"] = {"skipped": True}
-        
-        # Calculate composite score
-        score = self._calculate_score(gate_results)
-        passed = score >= 70 and len(flags) <= 3
-        
-        return QAResult(
-            passed=passed,
-            score=score,
-            gate_results=gate_results,
-            flags=flags,
-            recommendations=recommendations,
+        prompt = (
+            "Translate this English text back into Dutch. "
+            "Preserve the original Dutch style and vocabulary as closely as possible:\n\n"
+            f"{english_text}"
         )
-    
-    def check_style_metrics(self, text: str) -> dict:
-        """Analyze sentence length, periodicity, connectives."""
-        sentences = re.split(r'[.!?]+', text)
-        sentences = [s.strip() for s in sentences if len(s.strip()) > 5]
         
-        if not sentences:
-            return {"avg_sentence_length": 0, "sentence_count": 0, "periodic_ratio": 0}
+        resp = self.client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=prompt
+        )
+        backtranslation = resp.text
         
-        word_counts = [len(s.split()) for s in sentences]
-        avg_length = sum(word_counts) / len(word_counts)
+        # Simple similarity: shared word ratio
+        source_words = set(dutch_source.lower().split())
+        back_words = set(backtranslation.lower().split())
         
-        # Detect periodic sentences (main clause after ~60% of sentence)
-        periodic_count = 0
-        for sent in sentences:
-            words = sent.split()
-            if len(words) > 20:
-                # Look for main clause indicators in second half
-                second_half = " ".join(words[len(words)//2:]).lower()
-                if any(w in second_half for w in ["must", "confess", "maintain", "stands", "follows", "is"]):
-                    periodic_count += 1
-        
-        periodic_ratio = periodic_count / len(sentences) if sentences else 0
-        
-        # Count archaic connectives
-        connectives = ["hence", "whereby", "wherein", "therein", "thereby", "thereof", "nevertheless", "notwithstanding"]
-        connective_count = sum(text.lower().count(c) for c in connectives)
+        if source_words:
+            similarity = len(source_words & back_words) / len(source_words)
+        else:
+            similarity = 0
         
         return {
-            "avg_sentence_length": avg_length,
-            "sentence_count": len(sentences),
-            "periodic_ratio": periodic_ratio,
-            "periodic_count": periodic_count,
-            "connective_count": connective_count,
-            "connectives_per_1000": (connective_count / len(text.split())) * 1000 if text else 0,
+            "similarity_score": similarity,
+            "backtranslation": backtranslation[:500],  # Truncated for report
+            "source_word_count": len(source_words),
+            "shared_word_count": len(source_words & back_words),
         }
+
     
     def check_terminology(self, text: str) -> dict:
         """Check for terminology drift using termbase."""

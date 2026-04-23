@@ -19,13 +19,22 @@ import sys
 import json
 import time
 import argparse
+import io
+import warnings
 from pathlib import Path
 from dataclasses import dataclass, asdict
 from typing import Optional
 
+# Suppress Python 3.9 EOL warnings from google-auth
+warnings.filterwarnings("ignore", category=FutureWarning, module="google.auth")
+warnings.filterwarnings("ignore", category=FutureWarning, module="google.oauth2")
+warnings.filterwarnings("ignore", category=FutureWarning, module="google.api_core")
+
+import PIL.Image
+
 sys.path.insert(0, str(Path(__file__).parent))
 
-import google.generativeai as genai
+from google.genai import Client, types
 from termbase import Termbase
 
 
@@ -224,26 +233,27 @@ class ThreeTierPipeline:
     def __init__(self):
         self.termbase = Termbase()
         api_key = self._load_api_key()
-        genai.configure(api_key=api_key)
+        self.client = Client(api_key=api_key)
         
-        # Tier 1: Flash for OCR + Draft A
-        self.tier1_model = genai.GenerativeModel(
-            model_name=TIER1_MODEL,
-            generation_config={"temperature": 0.1, "max_output_tokens": 8192, "response_mime_type": "application/json"},
+        # Store model names and configs for tiered generation
+        self.tier1_config = types.GenerateContentConfig(
+            temperature=0.1,
+            max_output_tokens=8192,
+            response_mime_type="application/json",
             system_instruction=TIER1_SYSTEM_PROMPT,
         )
         
-        # Tier 2: Pro for adjudication
-        self.tier2_model = genai.GenerativeModel(
-            model_name=TIER2_MODEL,
-            generation_config={"temperature": 0.1, "max_output_tokens": 8192, "response_mime_type": "application/json"},
+        self.tier2_config = types.GenerateContentConfig(
+            temperature=0.1,
+            max_output_tokens=8192,
+            response_mime_type="application/json",
             system_instruction=TIER2_SYSTEM_PROMPT,
         )
         
-        # Tier 3: Flash for final polish
-        self.tier3_model = genai.GenerativeModel(
-            model_name=TIER3_MODEL,
-            generation_config={"temperature": 0.1, "max_output_tokens": 8192, "response_mime_type": "application/json"},
+        self.tier3_config = types.GenerateContentConfig(
+            temperature=0.1,
+            max_output_tokens=8192,
+            response_mime_type="application/json",
             system_instruction=TIER3_SYSTEM_PROMPT,
         )
         
@@ -322,20 +332,34 @@ class ThreeTierPipeline:
     
     def _tier1_ocr(self, image_bytes: bytes) -> dict:
         """Tier 1: OCR + Draft A via Flash."""
-        image_part = {"mime_type": "image/jpeg", "data": image_bytes}
-        user_prompt = "OCR and translate this page from Kuyper's Antirevolutionaire Staatkunde. Output JSON."
+        import PIL.Image
+        import io
+        image = PIL.Image.open(io.BytesIO(image_bytes))
+        user_prompt = "OCR and translate this page from Kuyper's Antirevolutionaire Staatkunde. Output valid JSON only."
         
-        response = self.tier1_model.generate_content([user_prompt, image_part])
+        response = self.client.models.generate_content(
+            model=TIER1_MODEL,
+            contents=[user_prompt, image],
+            config=self.tier1_config,
+        )
         
-        data = json.loads(self._extract_json(response.text))
+        try:
+            data = json.loads(self._extract_json(response.text))
+        except json.JSONDecodeError as e:
+            print(f"    JSON parse error: {e}")
+            print(f"    Raw response (first 500 chars): {response.text[:500]}")
+            raise
+        
         data['input_tokens'] = response.usage_metadata.prompt_token_count if response.usage_metadata else 0
         data['output_tokens'] = response.usage_metadata.candidates_token_count if response.usage_metadata else 0
         return data
     
     def _tier1_draft_b(self, dutch_text: str) -> str:
         """Tier 1: Generate literal Draft B via Flash."""
-        response = self.tier1_model.generate_content(
-            f"{TIER1_DRAFT_B_PROMPT}\n\n{dutch_text}"
+        response = self.client.models.generate_content(
+            model=TIER1_MODEL,
+            contents=f"{TIER1_DRAFT_B_PROMPT}\n\n{dutch_text}",
+            config=self.tier1_config,
         )
         return response.text
     
@@ -358,7 +382,11 @@ class ThreeTierPipeline:
         
         prompt += "\nSelect the winner and provide detailed evaluation."
         
-        response = self.tier2_model.generate_content(prompt)
+        response = self.client.models.generate_content(
+            model=TIER2_MODEL,
+            contents=prompt,
+            config=self.tier2_config,
+        )
         
         result = json.loads(self._extract_json(response.text))
         result['input_tokens'] = response.usage_metadata.prompt_token_count if response.usage_metadata else 0
@@ -368,7 +396,11 @@ class ThreeTierPipeline:
     def _tier3_polish(self, winner_text: str) -> dict:
         """Tier 3: Final polish via Flash."""
         prompt = f"Polish this translation and produce both Clean and Critical editions:\n\n{winner_text}"
-        response = self.tier3_model.generate_content(prompt)
+        response = self.client.models.generate_content(
+            model=TIER3_MODEL,
+            contents=prompt,
+            config=self.tier3_config,
+        )
         
         data = json.loads(self._extract_json(response.text))
         data['input_tokens'] = response.usage_metadata.prompt_token_count if response.usage_metadata else 0
@@ -376,12 +408,23 @@ class ThreeTierPipeline:
         return data
     
     def _extract_json(self, text: str) -> str:
-        """Extract JSON from response, handling markdown wrappers."""
+        """Extract JSON from response, handling markdown wrappers and truncation."""
         text = text.strip()
         if "```json" in text:
-            return text.split("```json")[1].split("```")[0].strip()
+            text = text.split("```json")[1].split("```")[0].strip()
         elif "```" in text:
-            return text.split("```")[1].split("```")[0].strip()
+            text = text.split("```")[1].split("```")[0].strip()
+        
+        # Handle truncated JSON by finding the last complete object
+        if not text.endswith("}"):
+            # Find last complete key-value pair and close the JSON
+            last_brace = text.rfind("}")
+            if last_brace > 0:
+                text = text[:last_brace+1]
+            else:
+                # No closing brace found, try to reconstruct
+                text = text + "}"
+        
         return text
     
     def _calc_cost(self, input_tokens: int, output_tokens: int, is_pro: bool) -> float:
