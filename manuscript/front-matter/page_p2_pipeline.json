@@ -1,0 +1,38 @@
+{
+  "label": "p2",
+  "dutch_ocr": "WtenHAVE\nKALVERSTRAAT 154\nAMSTERDAM",
+  "winner_translation": "WtenHAVE\nKALVERSTRAAT 154\nAMSTERDAM",
+  "draft_a": "WtenHAVE\nKALVERSTRAAT 154\nAMSTERDAM",
+  "draft_b": "WtenHAVE\nCalves Street\n154\nAmsterdam",
+  "draft_c": null,
+  "winner": "A",
+  "evaluation": {
+    "winner": "A",
+    "winner_text": "WtenHAVE\nKALVERSTRAAT 154\nAMSTERDAM",
+    "rationale": "Draft A is the superior translation as it correctly preserves all proper nouns and the original formatting of the address. Translating street names like \"KALVERSTRAAT\" to \"Calves Street\" (as seen in Draft B) is an inappropriate modernization and compromises factual accuracy, which is paramount even for non-theological texts. The faithful retention of the original Dutch proper nouns and structure in Draft A aligns perfectly with the principles of avoiding modernization and maintaining consistency in scholarly translation.",
+    "scores": {
+      "A": {
+        "theological": 10,
+        "voice": 5,
+        "structure": 10,
+        "modernization": 10,
+        "consistency": 10
+      },
+      "B": {
+        "theological": 0,
+        "voice": 5,
+        "structure": 2,
+        "modernization": 0,
+        "consistency": 0
+      }
+    },
+    "flags": []
+  },
+  "qa_score": 85,
+  "qa_passed": true,
+  "qa_flags": [
+    "Sentences too short: 4.0 words (target: 28.16)"
+  ],
+  "cost_usd": 0.0014242,
+  "processing_time_sec": 32.654256105422974
+}

@@ -1,0 +1,38 @@
+{
+  "label": "p9",
+  "dutch_ocr": "ANTIREVOLUTIONAIRE\nSTAATKUNDE\n\nMET NADERE TOELICHTING\nOP ONS PROGRAM DOOR\nDr. A. KUYPER\n\n„Het Calvinisme oorsprong en waarborg\nvan onze Constitutioneele vrijheden”.\nGROEN VAN PRINSTERER.\n\nEERSTE DEEL\nDE BEGINSELEN\n\nJ. H. KOK – 1916 – KAMPEN",
+  "winner_translation": "ANTIREVOLUTIONARY\nSTATECRAFT\n\nWITH FURTHER ELUCIDATION\nOF OUR PROGRAM BY\nDr. A. KUYPER\n\n“Calvinism, the origin and guarantee\nof our Constitutional liberties.”\nGROEN VAN PRINSTERER.\n\nFIRST PART\nTHE PRINCIPLES\n\nJ. H. KOK – 1916 – KAMPEN",
+  "draft_a": "ANTIREVOLUTIONARY\nSTATECRAFT\n\nWITH FURTHER ELUCIDATION\nOF OUR PROGRAM BY\nDr. A. KUYPER\n\n“Calvinism, the origin and guarantee\nof our Constitutional liberties.”\nGROEN VAN PRINSTERER.\n\nFIRST PART\nTHE PRINCIPLES\n\nJ. H. KOK – 1916 – KAMPEN",
+  "draft_b": "ANTIREVOLUTIONARY\nSTATE-KNOWLEDGE\n\nWITH FURTHER EXPLANATION\nON OUR PROGRAM BY\nDR. A. KUYPER\n\n„THE CALVINISM ORIGIN AND GUARANTEE\nOF OUR CONSTITUTIONAL FREEDOMS”.\nGREEN OF PRINSTERER.\n\nFIRST PART\nTHE PRINCIPLES\n\nJ. H. KOK – 1916 – KAMPEN",
+  "draft_c": null,
+  "winner": "A",
+  "evaluation": {
+    "winner": "A",
+    "winner_text": "ANTIREVOLUTIONARY\nSTATECRAFT\n\nWITH FURTHER ELUCIDATION\nOF OUR PROGRAM BY\nDr. A. KUYPER\n\n“Calvinism, the origin and guarantee\nof our Constitutional liberties.”\nGROEN VAN PRINSTERER.\n\nFIRST PART\nTHE PRINCIPLES\n\nJ. H. KOK – 1916 – KAMPEN",
+    "rationale": "Draft A is superior due to its strong theological precision and voice fidelity. The translation of 'Staatkunde' as 'STATECRAFT' accurately captures the nuanced meaning of political science and statesmanship, aligning perfectly with Kuyper's elevated discourse, unlike Draft B's overly literal 'STATE-KNOWLEDGE'. Furthermore, Draft A's use of 'ELUCIDATION' and 'liberties' maintains the appropriate scholarly tone and avoids the modernization present in Draft B's 'explanation' and 'freedoms'. The punctuation and capitalization in Draft A's quote are also more consistent with standard English scholarly practice.",
+    "scores": {
+      "A": {
+        "theological": 9,
+        "voice": 9,
+        "structure": 8,
+        "modernization": 9,
+        "consistency": 8
+      },
+      "B": {
+        "theological": 4,
+        "voice": 3,
+        "structure": 6,
+        "modernization": 4,
+        "consistency": 5
+      }
+    },
+    "flags": []
+  },
+  "qa_score": 85,
+  "qa_passed": true,
+  "qa_flags": [
+    "Sentences too short: 6.8 words (target: 28.16)"
+  ],
+  "cost_usd": 0.0015076,
+  "processing_time_sec": 24.978776931762695
+}

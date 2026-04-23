@@ -1,0 +1,11 @@
+{
+  "page_number": null,
+  "dutch_ocr": "WtenHAVE\nKALVERSTRAAT 154\nAMSTERDAM",
+  "english_translation": "WtenHAVE\nKALVERSTRAAT 154\nAMSTERDAM",
+  "unclear_words": [],
+  "notes": "The provided image is a blank page from the book, containing only a bookseller's stamp in the upper left corner. There is no theological or political text from Abraham Kuyper to OCR or translate on this particular page. The stamp contains a name and address, which are transcribed directly into the English translation.",
+  "input_tokens": 2244,
+  "output_tokens": 146,
+  "cost_usd": 0.0004242,
+  "processing_time_sec": 5.478387832641602
+}

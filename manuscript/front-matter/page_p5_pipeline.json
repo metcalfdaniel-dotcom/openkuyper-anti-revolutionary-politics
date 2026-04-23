@@ -1,0 +1,47 @@
+{
+  "label": "p5",
+  "dutch_ocr": "Digitized by the Internet Archive\nin 2010 with funding from\nPrinceton Theological Seminary Library\n\nhttp://www.archive.org/details/antirevolutionai01kuyp",
+  "winner_translation": "",
+  "draft_a": "Digitized by the Internet Archive\nin 2010 with funding from\nPrinceton Theological Seminary Library\n\nhttp://www.archive.org/details/antirevolutionai01kuyp",
+  "draft_b": "The text you provided is already in English, so a Dutch-to-English translation is not needed.",
+  "draft_c": null,
+  "winner": "NONE_PROVIDED",
+  "evaluation": {
+    "winner": "NONE_PROVIDED",
+    "winner_text": "",
+    "rationale": "No actual English translation drafts were provided for comparison. The sections labeled 'Draft A' and 'Draft B' contained only boilerplate text, making it impossible to evaluate them against the specified criteria for theological precision, voice fidelity, structural integrity, modernization, or consistency.",
+    "scores": {
+      "A": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      },
+      "B": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      },
+      "C": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      }
+    },
+    "flags": [
+      "No translation drafts were provided for evaluation."
+    ]
+  },
+  "qa_score": 85,
+  "qa_passed": true,
+  "qa_flags": [
+    "Sentences too short: 0.0 words (target: 28.16)"
+  ],
+  "cost_usd": 0.0014698,
+  "processing_time_sec": 24.888357162475586
+}

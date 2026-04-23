@@ -1,0 +1,39 @@
+{
+  "label": "p7",
+  "dutch_ocr": "ANTIREVOLUTIONAIRE STAATKUNDE",
+  "winner_translation": "Antirevolutionary Political Science",
+  "draft_a": "Antirevolutionary Political Science",
+  "draft_b": "ANTI-REVOLUTIONARY STATECRAFT",
+  "draft_c": null,
+  "winner": "A",
+  "evaluation": {
+    "winner": "A",
+    "winner_text": "Antirevolutionary Political Science",
+    "rationale": "Draft A, \"Antirevolutionary Political Science,\" is the superior translation due to its higher theological precision and consistency with established Kuyperian scholarship. \"Political Science\" accurately conveys the systematic and academic nature of Kuyper's `Staatkunde`, which is a comprehensive theoretical exposition rather than merely practical \"statecraft.\" This choice maintains the scholarly and elevated voice appropriate for a 19th-century Reformed theological work and aligns with common translations of Kuyper's corpus. While \"statecraft\" in Draft B has an archaic feel, it misrepresents the systematic scientific approach of Kuyper's work.",
+    "scores": {
+      "A": {
+        "theological": 9,
+        "voice": 8,
+        "structure": 7,
+        "modernization": 8,
+        "consistency": 9
+      },
+      "B": {
+        "theological": 6,
+        "voice": 7,
+        "structure": 7,
+        "modernization": 8,
+        "consistency": 6
+      }
+    },
+    "flags": []
+  },
+  "qa_score": 82,
+  "qa_passed": true,
+  "qa_flags": [
+    "Sentences too short: 3.0 words (target: 28.16)",
+    "Potential anachronisms: ['lit']"
+  ],
+  "cost_usd": 0.0013954,
+  "processing_time_sec": 18.250242948532104
+}
