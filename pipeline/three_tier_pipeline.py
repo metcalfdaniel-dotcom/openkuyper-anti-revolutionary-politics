@@ -15,6 +15,7 @@ Usage:
 """
 
 import os
+import re
 import sys
 import json
 import time
@@ -36,6 +37,37 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from google.genai import Client, types
 from termbase import Termbase
+
+
+# =============================================================================
+# RETRY UTILITIES
+# =============================================================================
+
+def with_retry(max_retries=5, base_delay=2.0, max_delay=60.0):
+    """Retry a function call with exponential backoff on 503/429 errors."""
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            for attempt in range(max_retries):
+                try:
+                    return func(*args, **kwargs)
+                except Exception as e:
+                    error_str = str(e)
+                    is_retryable = ("503" in error_str or "UNAVAILABLE" in error_str or
+                                    "429" in error_str or "RATE_LIMIT" in error_str or
+                                    "500" in error_str or "INTERNAL" in error_str)
+                    
+                    if not is_retryable or attempt == max_retries - 1:
+                        raise
+                    
+                    delay = min(base_delay * (2 ** attempt), max_delay)
+                    jitter = (hash(str(e)) % 100) / 100.0  # 0-1s jitter
+                    total_delay = delay + jitter
+                    print(f"    API error (attempt {attempt + 1}/{max_retries}): {e}")
+                    print(f"    Retrying in {total_delay:.1f}s...")
+                    time.sleep(total_delay)
+            return None
+        return wrapper
+    return decorator
 
 
 # =============================================================================
@@ -325,11 +357,12 @@ class ThreeTierPipeline:
             winner_text=t2_result['winner_text'],
             clean_edition=t3_result['clean_edition'],
             critical_edition=t3_result['critical_edition'],
-            evaluation=t2_result['evaluation'],
+            evaluation=t2_result,
             cost_usd=page_cost,
             processing_time_sec=elapsed,
         )
     
+    @with_retry(max_retries=5, base_delay=2.0)
     def _tier1_ocr(self, image_bytes: bytes) -> dict:
         """Tier 1: OCR + Draft A via Flash."""
         import PIL.Image
@@ -348,12 +381,15 @@ class ThreeTierPipeline:
         except json.JSONDecodeError as e:
             print(f"    JSON parse error: {e}")
             print(f"    Raw response (first 500 chars): {response.text[:500]}")
-            raise
+            print(f"    Attempting fallback parse...")
+            data = self._fallback_parse(response.text)
+            data['parse_warning'] = f"Fallback parse used due to: {e}"
         
         data['input_tokens'] = response.usage_metadata.prompt_token_count if response.usage_metadata else 0
         data['output_tokens'] = response.usage_metadata.candidates_token_count if response.usage_metadata else 0
         return data
     
+    @with_retry(max_retries=5, base_delay=2.0)
     def _tier1_draft_b(self, dutch_text: str) -> str:
         """Tier 1: Generate literal Draft B via Flash."""
         response = self.client.models.generate_content(
@@ -363,6 +399,7 @@ class ThreeTierPipeline:
         )
         return response.text
     
+    @with_retry(max_retries=5, base_delay=2.0)
     def _tier2_adjudicate(self, dutch: str, draft_a: str, draft_b: str, 
                           draft_c: Optional[str]) -> dict:
         """Tier 2: Adjudication via Pro."""
@@ -393,6 +430,7 @@ class ThreeTierPipeline:
         result['output_tokens'] = response.usage_metadata.candidates_token_count if response.usage_metadata else 0
         return result
     
+    @with_retry(max_retries=5, base_delay=2.0)
     def _tier3_polish(self, winner_text: str) -> dict:
         """Tier 3: Final polish via Flash."""
         prompt = f"Polish this translation and produce both Clean and Critical editions:\n\n{winner_text}"
@@ -415,17 +453,96 @@ class ThreeTierPipeline:
         elif "```" in text:
             text = text.split("```")[1].split("```")[0].strip()
         
-        # Handle truncated JSON by finding the last complete object
+        # If already valid, return immediately
+        try:
+            json.loads(text)
+            return text
+        except json.JSONDecodeError:
+            pass
+        
+        # Handle truncated JSON by finding the last safe point
         if not text.endswith("}"):
-            # Find last complete key-value pair and close the JSON
-            last_brace = text.rfind("}")
-            if last_brace > 0:
-                text = text[:last_brace+1]
-            else:
-                # No closing brace found, try to reconstruct
-                text = text + "}"
+            # Strategy: find the last complete string value and close from there
+            # Look for the last unescaped quote
+            last_safe = 0
+            in_string = False
+            escape_next = False
+            for i, ch in enumerate(text):
+                if escape_next:
+                    escape_next = False
+                    continue
+                if ch == '\\':
+                    escape_next = True
+                    continue
+                if ch == '"':
+                    in_string = not in_string
+                    if not in_string:
+                        last_safe = i  # Mark end of complete string
+            
+            if in_string and last_safe > 0:
+                # Truncated inside a string — cut to last complete string
+                text = text[:last_safe+1]
+            
+            # Now close any open structures
+            # Count unclosed braces and brackets
+            open_braces = 0
+            open_brackets = 0
+            in_string = False
+            escape_next = False
+            for ch in text:
+                if escape_next:
+                    escape_next = False
+                    continue
+                if ch == '\\':
+                    escape_next = True
+                    continue
+                if ch == '"':
+                    in_string = not in_string
+                    continue
+                if not in_string:
+                    if ch == '{':
+                        open_braces += 1
+                    elif ch == '}':
+                        open_braces -= 1
+                    elif ch == '[':
+                        open_brackets += 1
+                    elif ch == ']':
+                        open_brackets -= 1
+            
+            # Close structures in reverse order
+            text = text.rstrip(', \n')
+            if text.endswith(':'):
+                text = text + '""'  # Empty string for truncated value
+            text = text + ']"' * open_brackets  # Close arrays (and any strings)
+            text = text + '}' * open_braces  # Close objects
+            
+            # Ensure we end with a single closing brace for the root object
+            if not text.endswith('}'):
+                text = text + '}'
         
         return text
+    
+    def _fallback_parse(self, text: str) -> dict:
+        """Extract data from malformed JSON using regex fallback."""
+        result = {
+            'page_number': 'X',
+            'dutch_ocr': '',
+            'english_draft_a': '',
+            'unclear_words': [],
+            'notes': 'Parsed from truncated response'
+        }
+        
+        # Try to extract dutch_ocr
+        dutch_match = re.search(r'"dutch_ocr"\s*:\s*"(.*?)"(?:,\s*"|\}\s*$)', text, re.DOTALL)
+        if dutch_match:
+            result['dutch_ocr'] = dutch_match.group(1).replace('\\n', '\n').replace('\\"', '"')
+        
+        # Try to extract english_draft_a
+        eng_match = re.search(r'"english_draft_a"\s*:\s*"(.*?)"(?:,\s*"|\}\s*$)', text, re.DOTALL)
+        if eng_match:
+            result['english_draft_a'] = eng_match.group(1).replace('\\n', '\n').replace('\\"', '"')
+        
+        return result
     
     def _calc_cost(self, input_tokens: int, output_tokens: int, is_pro: bool) -> float:
         """Calculate API cost."""
