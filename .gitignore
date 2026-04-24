@@ -67,3 +67,8 @@ scripts/*.json
 # Working / temp outputs
 *.log
 pipeline_output.log
+
+# Open Dutch WordNet XML (148MB, exceeds GitHub 100MB limit)
+# Download instructions in reference/odwn/README.md
+reference/odwn/*.xml
+reference/odwn/*.xml.gz
