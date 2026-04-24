@@ -1,0 +1,11 @@
+{
+  "page_number": null,
+  "dutch_ocr": "Digitized by the Internet Archive\nin 2010 with funding from\nPrinceton Theological Seminary Library\n\nhttp://www.archive.org/details/antirevolutionai01kuyp",
+  "english_translation": "Digitized by the Internet Archive\nin 2010 with funding from\nPrinceton Theological Seminary Library\n\nhttp://www.archive.org/details/antirevolutionai01kuyp",
+  "unclear_words": [],
+  "notes": "The provided image contains an English digitization notice, not a page of Dutch text from Abraham Kuyper's *Antirevolutionaire Staatkunde*. Therefore, no Dutch-to-English translation was performed. The `dutch_ocr` field contains the transcribed English text, and the `english_translation` field is a direct copy of this English text, as no source Dutch was present to translate according to the specified voice standards.",
+  "input_tokens": 2244,
+  "output_tokens": 222,
+  "cost_usd": 0.0004698,
+  "processing_time_sec": 10.433856010437012
+}

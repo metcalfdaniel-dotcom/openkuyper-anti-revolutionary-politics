@@ -1,0 +1,49 @@
+{
+  "label": "p6",
+  "dutch_ocr": "",
+  "winner_translation": "",
+  "draft_a": "",
+  "draft_b": "**Dutch Text:** Ik ben benieuwd naar de resultaten van het onderzoek.\n\n**Literal Translation:** I am curious toward the results of the the research.",
+  "draft_c": null,
+  "winner": "A",
+  "evaluation": {
+    "winner": "A",
+    "winner_text": "",
+    "rationale": "No content was provided for Draft A or the Source Dutch text, making a direct comparison impossible. Draft B offered only a literal gloss of an unrelated sentence, further precluding evaluation against the specified criteria. Consequently, a meaningful selection of the 'best' translation could not be made. The choice of 'A' is arbitrary, reflecting the absence of comparable translation texts.",
+    "scores": {
+      "A": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      },
+      "B": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      },
+      "C": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      }
+    },
+    "flags": [
+      "No content provided for Source Dutch text.",
+      "No content provided for Draft A.",
+      "Draft B contains only a literal gloss of an unrelated sentence, not a full translation for comparison."
+    ]
+  },
+  "qa_score": 85,
+  "qa_passed": true,
+  "qa_flags": [
+    "Sentences too short: 0.0 words (target: 28.16)"
+  ],
+  "cost_usd": 0.0013858,
+  "processing_time_sec": 37.03429293632507
+}

@@ -1,0 +1,42 @@
+{
+  "label": "p10",
+  "dutch_ocr": "",
+  "winner_translation": "",
+  "draft_a": "",
+  "draft_b": "Please provide the Dutch text you would like me to translate. I will then provide a straightforward, word-for-word gloss in simple English.",
+  "draft_c": null,
+  "winner": "NONE",
+  "evaluation": {
+    "winner": "NONE",
+    "winner_text": "",
+    "rationale": "No Dutch source text or English drafts (A and B) were provided for comparison. Please provide the necessary texts to perform the analysis and selection according to the specified criteria.",
+    "scores": {
+      "A": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      },
+      "B": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      }
+    },
+    "flags": [
+      "Missing Dutch source text",
+      "Missing Draft A",
+      "Missing Draft B"
+    ]
+  },
+  "qa_score": 85,
+  "qa_passed": true,
+  "qa_flags": [
+    "Sentences too short: 0.0 words (target: 28.16)"
+  ],
+  "cost_usd": 0.0013864,
+  "processing_time_sec": 12.92212700843811
+}

@@ -1,0 +1,11 @@
+{
+  "page_number": null,
+  "dutch_ocr": "",
+  "english_translation": "",
+  "unclear_words": [],
+  "notes": "The provided image is entirely blank. There is no text to OCR or translate on this page. Therefore, the 'dutch_ocr' and 'english_translation' fields are empty.",
+  "input_tokens": 2244,
+  "output_tokens": 82,
+  "cost_usd": 0.0003858,
+  "processing_time_sec": 2.378399133682251
+}

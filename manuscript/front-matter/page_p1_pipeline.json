@@ -1,0 +1,50 @@
+{
+  "label": "p1",
+  "dutch_ocr": "",
+  "winner_translation": "",
+  "draft_a": "",
+  "draft_b": "Please provide the Dutch text you would like me to translate. I am ready to provide a literal word-for-word gloss once you give me the text.",
+  "draft_c": null,
+  "winner": "A",
+  "evaluation": {
+    "winner": "A",
+    "winner_text": "",
+    "rationale": "No Dutch source text or English translation drafts were provided for comparison. Draft A and the source Dutch text were empty. Draft B contained a request for input rather than a translation. Therefore, a meaningful comparison and selection of the best translation could not be performed.",
+    "scores": {
+      "A": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      },
+      "B": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      },
+      "C": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      }
+    },
+    "flags": [
+      "Missing Dutch source text for translation.",
+      "Draft A content is empty, preventing evaluation.",
+      "Draft B is a request for input, not a translation draft, preventing evaluation.",
+      "No valid English drafts were provided for comparison."
+    ]
+  },
+  "qa_score": 85,
+  "qa_passed": true,
+  "qa_flags": [
+    "Sentences too short: 0.0 words (target: 28.16)"
+  ],
+  "cost_usd": 0.0013816,
+  "processing_time_sec": 26.44165301322937
+}

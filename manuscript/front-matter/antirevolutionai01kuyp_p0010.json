@@ -1,0 +1,11 @@
+{
+  "page_number": null,
+  "dutch_ocr": "",
+  "english_translation": "",
+  "unclear_words": [],
+  "notes": "The provided image appears to be a blank page. No discernible Dutch text could be OCR'd or translated. The faint marks visible are consistent with pressure marks or smudges, not printed characters.",
+  "input_tokens": 2244,
+  "output_tokens": 83,
+  "cost_usd": 0.0003864,
+  "processing_time_sec": 3.669295310974121
+}

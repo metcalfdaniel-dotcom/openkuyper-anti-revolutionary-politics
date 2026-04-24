@@ -1,0 +1,49 @@
+{
+  "label": "p3",
+  "dutch_ocr": "",
+  "winner_translation": "",
+  "draft_a": "",
+  "draft_b": "Dutch: Ik wil graag een auto huren.\nEnglish: I want gladly a car to rent.",
+  "draft_c": null,
+  "winner": "A",
+  "evaluation": {
+    "winner": "A",
+    "winner_text": "",
+    "rationale": "The source Dutch text and the English drafts (A and B) were not provided. Therefore, a comparison and selection based on the specified criteria cannot be performed. 'A' is selected as a placeholder to satisfy the JSON schema, but no actual evaluation was made.",
+    "scores": {
+      "A": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      },
+      "B": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      },
+      "C": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      }
+    },
+    "flags": [
+      "Missing source Dutch text",
+      "Missing Draft A text",
+      "Missing Draft B text"
+    ]
+  },
+  "qa_score": 85,
+  "qa_passed": true,
+  "qa_flags": [
+    "Sentences too short: 0.0 words (target: 28.16)"
+  ],
+  "cost_usd": 0.0013726,
+  "processing_time_sec": 22.415822982788086
+}

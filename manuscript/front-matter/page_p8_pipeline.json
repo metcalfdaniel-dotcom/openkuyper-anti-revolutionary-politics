@@ -1,0 +1,49 @@
+{
+  "label": "p8",
+  "dutch_ocr": "",
+  "winner_translation": "",
+  "draft_a": "",
+  "draft_b": "Please provide the Dutch text you would like translated. I am ready to give you a literal, word-for-word translation once you provide it.",
+  "draft_c": null,
+  "winner": "A",
+  "evaluation": {
+    "winner": "A",
+    "winner_text": "",
+    "rationale": "No Dutch source text or English drafts were provided for comparison. Draft A was empty, and Draft B contained a placeholder message instead of a translation. Consequently, a meaningful evaluation against the specified criteria for theological precision, voice fidelity, structural integrity, and modernization was impossible. The selection of 'A' is arbitrary, as no content was available for assessment.",
+    "scores": {
+      "A": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      },
+      "B": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      },
+      "C": {
+        "theological": 0,
+        "voice": 0,
+        "structure": 0,
+        "modernization": 0,
+        "consistency": 0
+      }
+    },
+    "flags": [
+      "Missing Dutch source text",
+      "Missing content for Draft A",
+      "Draft B contains a placeholder message, not a translation"
+    ]
+  },
+  "qa_score": 85,
+  "qa_passed": true,
+  "qa_flags": [
+    "Sentences too short: 0.0 words (target: 28.16)"
+  ],
+  "cost_usd": 0.0013732,
+  "processing_time_sec": 29.45865488052368
+}
