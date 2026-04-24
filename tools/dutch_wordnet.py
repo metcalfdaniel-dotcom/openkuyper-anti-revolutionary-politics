@@ -60,26 +60,54 @@ class DutchWordNet:
         
         self._index()
     
+    def _tag(self, name: str) -> str:
+        """Return tag name, handling both namespaced and plain XML."""
+        # Try namespaced first (original format), then plain
+        return name
+    
+    def _find(self, elem: ET.Element, tag: str, ns: Optional[Dict] = None) -> Optional[ET.Element]:
+        """Find child element, trying both namespaced and plain tags."""
+        # Try with namespace
+        if ns:
+            result = elem.find(f"{{{ns['lmf']}}}{tag}", ns)
+            if result is not None:
+                return result
+        # Try plain tag
+        return elem.find(tag)
+    
+    def _iter(self, elem: ET.Element, tag: str, ns: Optional[str] = None) -> ET.Element:
+        """Iterate over child elements, trying both namespaced and plain tags."""
+        # Try with namespace
+        found = False
+        if ns:
+            for child in elem.iter(f"{{{ns}}}{tag}"):
+                found = True
+                yield child
+        if not found:
+            # Try plain tag
+            for child in elem.iter(tag):
+                yield child
+    
     def _index(self):
         """Build internal indexes from the XML tree."""
         ns = {"lmf": "http://www.w3.org/ns/lemon/lmf"}
         
         # Index LexicalEntries by lemma
-        for entry in self._root.iter("{http://www.w3.org/ns/lemon/lmf}LexicalEntry"):
-            lemma_elem = entry.find("lmf:Lemma", ns)
+        for entry in self._root.iter("LexicalEntry"):
+            lemma_elem = entry.find("Lemma")
             if lemma_elem is not None:
                 written_form = lemma_elem.get("writtenForm", "").lower()
                 if written_form:
                     self._lemma_to_entries[written_form].append(entry)
             
             # Map senses to synsets
-            for sense in entry.iter("{http://www.w3.org/ns/lemon/lmf}Sense"):
+            for sense in entry.iter("Sense"):
                 synset_id = sense.get("synset", "")
                 if synset_id:
                     self._synset_id_to_entries[synset_id].append(entry)
         
         # Index Synsets
-        for synset in self._root.iter("{http://www.w3.org/ns/lemon/lmf}Synset"):
+        for synset in self._root.iter("Synset"):
             synset_id = synset.get("id", "")
             if synset_id:
                 self._synset_id_to_synset[synset_id] = synset
@@ -101,21 +129,21 @@ class DutchWordNet:
         results = []
         
         for entry in entries:
-            lemma_elem = entry.find("{http://www.w3.org/ns/lemon/lmf}Lemma")
+            lemma_elem = entry.find("Lemma")
             lemma = lemma_elem.get("writtenForm", term) if lemma_elem is not None else term
             pos = entry.get("partOfSpeech", "unknown")
             
             senses = []
-            for sense in entry.iter("{http://www.w3.org/ns/lemon/lmf}Sense"):
+            for sense in entry.iter("Sense"):
                 synset_id = sense.get("synset", "")
                 definition = sense.get("definition", "")
                 provenance = sense.get("provenance", "")
                 
                 # Get domain from pragmatics if available
                 domains = []
-                pragmatics = sense.find("{http://www.w3.org/ns/lemon/lmf}Pragmatics")
+                pragmatics = sense.find("Pragmatics")
                 if pragmatics is not None:
-                    domains_elem = pragmatics.find("{http://www.w3.org/ns/lemon/lmf}Domains")
+                    domains_elem = pragmatics.find("Domains")
                     if domains_elem is not None:
                         domains = [d.get("domain", "") for d in domains_elem]
                 
@@ -158,14 +186,14 @@ class DutchWordNet:
         }
         
         # Get gloss from Definitions
-        definitions = synset.find("{http://www.w3.org/ns/lemon/lmf}Definitions")
+        definitions = synset.find("Definitions")
         if definitions is not None:
-            def_elem = definitions.find("{http://www.w3.org/ns/lemon/lmf}Definition")
+            def_elem = definitions.find("Definition")
             if def_elem is not None:
                 result["gloss"] = def_elem.get("gloss", "")
         
         # Get relations
-        relations = synset.find("{http://www.w3.org/ns/lemon/lmf}SynsetRelations")
+        relations = synset.find("SynsetRelations")
         if relations is not None:
             for rel in relations:
                 result["relations"].append({
@@ -175,7 +203,7 @@ class DutchWordNet:
         
         # Get member lemmas
         for entry in self._synset_id_to_entries.get(synset_id, []):
-            lemma_elem = entry.find("{http://www.w3.org/ns/lemon/lmf}Lemma")
+            lemma_elem = entry.find("Lemma")
             if lemma_elem is not None:
                 result["members"].append(lemma_elem.get("writtenForm", ""))
         
@@ -208,7 +236,7 @@ class DutchWordNet:
         visited_synsets = set()
         
         for entry in entries:
-            for sense in entry.iter("{http://www.w3.org/ns/lemon/lmf}Sense"):
+            for sense in entry.iter("Sense"):
                 synset_id = sense.get("synset", "")
                 if not synset_id or synset_id in visited_synsets:
                     continue
@@ -248,10 +276,10 @@ class DutchWordNet:
         domains = set()
         
         for entry in entries:
-            for sense in entry.iter("{http://www.w3.org/ns/lemon/lmf}Sense"):
-                pragmatics = sense.find("{http://www.w3.org/ns/lemon/lmf}Pragmatics")
+            for sense in entry.iter("Sense"):
+                pragmatics = sense.find("Pragmatics")
                 if pragmatics is not None:
-                    domains_elem = pragmatics.find("{http://www.w3.org/ns/lemon/lmf}Domains")
+                    domains_elem = pragmatics.find("Domains")
                     if domains_elem is not None:
                         for d in domains_elem:
                             domain = d.get("domain", "")
@@ -270,7 +298,7 @@ class DutchWordNet:
         ilis = []
         
         for entry in entries:
-            for sense in entry.iter("{http://www.w3.org/ns/lemon/lmf}Sense"):
+            for sense in entry.iter("Sense"):
                 synset_id = sense.get("synset", "")
                 synset = self._synset_id_to_synset.get(synset_id)
                 if synset is not None:
