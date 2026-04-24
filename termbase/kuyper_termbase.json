@@ -1,542 +1,249 @@
 {
-  "geloof": {
-    "dutch": "geloof",
-    "english": "faith",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
+  "_meta": {
+    "generated_by": "notion_worker",
+    "generated_at": "2026-04-24T19:27:13.160137+00:00",
+    "total_terms": 79,
+    "total_senses": 12
   },
-  "genade": {
-    "dutch": "genade",
-    "english": "grace",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "heiligmaking": {
-    "dutch": "heiligmaking",
-    "english": "sanctification",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "rechtvaardiging": {
-    "dutch": "rechtvaardiging",
-    "english": "justification",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "verlossing": {
-    "dutch": "verlossing",
-    "english": "salvation",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "verzoening": {
-    "dutch": "verzoening",
-    "english": "atonement",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "verkiezing": {
-    "dutch": "verkiezing",
-    "english": "election",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "voorzienigheid": {
-    "dutch": "voorzienigheid",
-    "english": "providence",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "openbaring": {
-    "dutch": "openbaring",
-    "english": "revelation",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "schrift": {
-    "dutch": "schrift",
-    "english": "Scripture",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "verbond": {
-    "dutch": "verbond",
-    "english": "covenant",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "kerk": {
-    "dutch": "kerk",
-    "english": "church",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "sacrament": {
-    "dutch": "sacrament",
-    "english": "sacrament",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "doop": {
-    "dutch": "doop",
-    "english": "baptism",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "zonde": {
-    "dutch": "zonde",
-    "english": "sin",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "schuld": {
-    "dutch": "schuld",
-    "english": "guilt",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "sfeer": {
-    "dutch": "sfeer",
-    "english": "sphere",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "soevereiniteit": {
-    "dutch": "soevereiniteit",
-    "english": "sovereignty",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "soevereiniteit in eigen kring": {
-    "dutch": "soevereiniteit in eigen kring",
-    "english": "sphere sovereignty",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "staat": {
-    "dutch": "staat",
-    "english": "state",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "overheid": {
-    "dutch": "overheid",
-    "english": "government",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "revolutie": {
-    "dutch": "revolutie",
-    "english": "revolution",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "antirevolutionair": {
-    "dutch": "antirevolutionair",
-    "english": "antirevolutionary",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "beginsel": {
-    "dutch": "beginsel",
-    "english": "principle",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "grondwet": {
-    "dutch": "grondwet",
-    "english": "constitution",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "recht": {
-    "dutch": "recht",
-    "english": "law / right",
-    "confidence": "locked",
-    "context": "CRITICAL: This term is polysemous. Use context to determine translation.",
-    "notes": "CONTEXT RULES FOR 'RECHT': (1) INSTITUTIONAL/JURISPRUDENTIAL context (state, courts, Rechtsstaat, legal systems, positive law, statutes) → 'LAW'. (2) MORAL/THEOLOGICAL context (divine ordinance, God's justice, natural law, contrast with French Revolution's arbitrary will, pre-political moral entitlement) → 'RIGHT' or 'JUSTICE'. (3) ETYMOLOGICAL discussions → preserve ambiguity with 'Law / Right'. Examples: 'Rechtsstaat' = 'Constitutional State / Rule-of-Law State'; 'Rechtsbegrip' in jurisprudential section = 'Concept of Law'; 'Rechtsbegrip' when contrasting divine justice vs revolutionary legislation = 'Concept of Right'; 'bron van het recht' = 'Source of Right / Law' depending on whether discussing divine origin or positive legislation.",
-    "first_seen": "",
-    "review_flag": true,
-    "alternates": ["law", "right", "justice", "jus"]
-  },
-  "volk": {
-    "dutch": "volk",
-    "english": "people / nation",
-    "confidence": "medium",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "natie": {
-    "dutch": "natie",
-    "english": "nation",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "maatschappij": {
-    "dutch": "maatschappij",
-    "english": "society",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "gezin": {
-    "dutch": "gezin",
-    "english": "family",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "school": {
-    "dutch": "school",
-    "english": "school",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "ziel": {
-    "dutch": "ziel",
-    "english": "soul",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "geest": {
-    "dutch": "geest",
-    "english": "spirit",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "hart": {
-    "dutch": "hart",
-    "english": "heart",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "geweten": {
-    "dutch": "geweten",
-    "english": "conscience",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "bewustzijn": {
-    "dutch": "bewustzijn",
-    "english": "consciousness",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "vermogen": {
-    "dutch": "vermogen",
-    "english": "faculty / power",
-    "confidence": "medium",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "wil": {
-    "dutch": "wil",
-    "english": "will",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "verstand": {
-    "dutch": "verstand",
-    "english": "intellect / understanding",
-    "confidence": "medium",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "natuur": {
-    "dutch": "natuur",
-    "english": "nature",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "algemeene genade": {
-    "dutch": "algemeene genade",
-    "english": "common grace",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "bijzondere genade": {
-    "dutch": "bijzondere genade",
-    "english": "particular grace / special grace",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "levenssysteem": {
-    "dutch": "levenssysteem",
-    "english": "life-system / life and thought system",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "wereldbeschouwing": {
-    "dutch": "wereldbeschouwing",
-    "english": "worldview / world-and-life view",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "gereformeerd": {
-    "dutch": "gereformeerd",
-    "english": "Reformed / Calvinistic",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "calvinistisch": {
-    "dutch": "calvinistisch",
-    "english": "Calvinistic",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "katholiek": {
-    "dutch": "katholiek",
-    "english": "catholic / universal",
-    "confidence": "medium",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "daarom": {
-    "dutch": "daarom",
-    "english": "therefore / hence",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "zodat": {
-    "dutch": "zodat",
-    "english": "so that",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "echter": {
-    "dutch": "echter",
-    "english": "however / yet",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "immers": {
-    "dutch": "immers",
-    "english": "for / since / indeed",
-    "confidence": "medium",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "namelijk": {
-    "dutch": "namelijk",
-    "english": "namely / that is to say",
-    "confidence": "high",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "wel": {
-    "dutch": "wel",
-    "english": "indeed / truly / certainly",
-    "confidence": "medium",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
-  },
-  "toch": {
-    "dutch": "toch",
-    "english": "yet / still / nevertheless",
-    "confidence": "medium",
-    "context": "",
-    "notes": "",
-    "first_seen": "",
-    "review_flag": false,
-    "alternates": []
+  "terms": {
+    "vermogen": {
+      "dutch": "vermogen",
+      "status": "proposed",
+      "tags": [],
+      "appears_in": [],
+      "default_treatment": "",
+      "notes": "",
+      "senses": [
+        {
+          "sense_id": "vermogen-power",
+          "preferred_english": "power, ability",
+          "domain": "philosophy",
+          "context_trigger": "general capacity to act or perform (e.g., \"het vermogen om te kiezen\" = the power to choose)",
+          "treatment": "",
+          "status": "locked",
+          "confidence": "high",
+          "disallowed": [],
+          "first_occurrence_gloss": "",
+          "gloss_dutch": "vermogen",
+          "examples": "",
+          "ili": "i113363",
+          "odwn_synset_id": "eng-30-14530836-n"
+        },
+        {
+          "sense_id": "vermogen-faculty",
+          "preferred_english": "faculty, capacity",
+          "domain": "philosophy",
+          "context_trigger": "mental or natural faculty/power (e.g., \"de vermogens der ziel\" = faculties of the soul)",
+          "treatment": "",
+          "status": "locked",
+          "confidence": "high",
+          "disallowed": [],
+          "first_occurrence_gloss": "",
+          "gloss_dutch": "vaardigheid",
+          "examples": "",
+          "ili": "i66539",
+          "odwn_synset_id": "eng-30-05637558-n"
+        },
+        {
+          "sense_id": "vermogen-wealth",
+          "preferred_english": "wealth, fortune",
+          "domain": "general",
+          "context_trigger": "financial assets or property (e.g., \"particuliere vermogens\" = private wealth)",
+          "treatment": "",
+          "status": "approved",
+          "confidence": "medium",
+          "disallowed": [],
+          "first_occurrence_gloss": "",
+          "gloss_dutch": "geld of geldzaken",
+          "examples": "",
+          "ili": "i106280",
+          "odwn_synset_id": "eng-30-13250542-n"
+        }
+      ]
+    },
+    "geest": {
+      "dutch": "geest",
+      "status": "approved",
+      "tags": [
+        "Church/ecclesiology"
+      ],
+      "appears_in": [],
+      "default_treatment": "",
+      "notes": "",
+      "senses": [
+        {
+          "sense_id": "geest-mind",
+          "preferred_english": "mind, intellect",
+          "domain": "philosophy",
+          "context_trigger": "faculty of thought and reason (e.g., \"de geestelijke vermogens\" = mental faculties)",
+          "treatment": "",
+          "status": "locked",
+          "confidence": "high",
+          "disallowed": [],
+          "first_occurrence_gloss": "",
+          "gloss_dutch": "that which is responsible for one's thoughts and feelings",
+          "examples": "",
+          "ili": "i66397",
+          "odwn_synset_id": "eng-30-05611302-n"
+        },
+        {
+          "sense_id": "geest-spirit",
+          "preferred_english": "spirit",
+          "domain": "theology",
+          "context_trigger": "theological or metaphysical sense of spirit/soul (e.g., \"Heilige Geest\" = Holy Spirit)",
+          "treatment": "",
+          "status": "locked",
+          "confidence": "high",
+          "disallowed": [],
+          "first_occurrence_gloss": "",
+          "gloss_dutch": "ziel",
+          "examples": "",
+          "ili": "i93161",
+          "odwn_synset_id": "eng-30-10627082-n"
+        },
+        {
+          "sense_id": "geest-intent",
+          "preferred_english": "spirit, intent",
+          "domain": "general",
+          "context_trigger": "underlying meaning or intention (e.g., \"in de geest van de wet\" = in the spirit of the law)",
+          "treatment": "",
+          "status": "approved",
+          "confidence": "medium",
+          "disallowed": [],
+          "first_occurrence_gloss": "",
+          "gloss_dutch": "bedoeling of strekking",
+          "examples": "",
+          "ili": "i71174",
+          "odwn_synset_id": "eng-30-06605897-n"
+        },
+        {
+          "sense_id": "geest-ghost",
+          "preferred_english": "ghost, apparition",
+          "domain": "general",
+          "context_trigger": "supernatural or disembodied appearance (rare in Kuyper; usually metaphorical)",
+          "treatment": "",
+          "status": "approved",
+          "confidence": "medium",
+          "disallowed": [],
+          "first_occurrence_gloss": "",
+          "gloss_dutch": "onstoffelijke verschijning",
+          "examples": "",
+          "ili": "i86825",
+          "odwn_synset_id": "eng-30-09545324-n"
+        }
+      ]
+    },
+    "volk": {
+      "dutch": "volk",
+      "status": "proposed",
+      "tags": [
+        "State/Overheid"
+      ],
+      "appears_in": [],
+      "default_treatment": "",
+      "notes": "",
+      "senses": [
+        {
+          "sense_id": "volk-nation",
+          "preferred_english": "nation, people",
+          "domain": "politics",
+          "context_trigger": "when referring to a national collective or body politic (e.g., \"het Nederlandsche volk\")",
+          "treatment": "",
+          "status": "locked",
+          "confidence": "high",
+          "disallowed": [],
+          "first_occurrence_gloss": "",
+          "gloss_dutch": "het volk v.e. land",
+          "examples": "",
+          "ili": "i80034",
+          "odwn_synset_id": "eng-30-08160276-n"
+        },
+        {
+          "sense_id": "volk-common-people",
+          "preferred_english": "common people, populace",
+          "domain": "politics",
+          "context_trigger": "when referring to the lower social classes or masses (e.g., \"het gewone volk\")",
+          "treatment": "",
+          "status": "approved",
+          "confidence": "high",
+          "disallowed": [],
+          "first_occurrence_gloss": "",
+          "gloss_dutch": "lagere sociale klassen",
+          "examples": "",
+          "ili": "i80128",
+          "odwn_synset_id": "eng-30-08180190-n"
+        }
+      ]
+    },
+    "recht": {
+      "dutch": "recht",
+      "status": "proposed",
+      "tags": [
+        "Recht-family"
+      ],
+      "appears_in": [
+        "Vol 1 — Ch I"
+      ],
+      "default_treatment": "Contextual (see rules)",
+      "notes": "Polysemous core term. Always disambiguate by domain. ODWN enriched with 3 senses.",
+      "senses": [
+        {
+          "sense_id": "recht-right",
+          "preferred_english": "Right",
+          "domain": "philosophy",
+          "context_trigger": "MORAL/THEOLOGICAL context: contrasted with 'Onrecht' (wrong/injustice); in the philosophical tetrad alongside Good, True, Beautiful; discussing divine ordinance, God's justice, natural law. 'Bron van het recht' when discussing God's ordinance = 'source of Right'. Capitalize when used as noun of art.",
+          "treatment": "Render",
+          "status": "locked",
+          "confidence": "high",
+          "disallowed": [
+            "law",
+            "justice",
+            "privilege"
+          ],
+          "first_occurrence_gloss": "Right (divine moral order)",
+          "gloss_dutch": "dat wat moreel juist is; het goede, het schone, het ware, het recht",
+          "examples": "",
+          "ili": "",
+          "odwn_synset_id": ""
+        },
+        {
+          "sense_id": "recht-law",
+          "preferred_english": "law",
+          "domain": "law",
+          "context_trigger": "INSTITUTIONAL context: preceded by \"geschreven\", \"staats-\", \"burgerlijk\"; discussing courts, legislation, legal systems, positive law. \"Rechtsstaat\" = \"constitutional state\". \"Bron van het recht\" when discussing legislation = \"source of law\".",
+          "treatment": "Render",
+          "status": "locked",
+          "confidence": "high",
+          "disallowed": [
+            "justice",
+            "right",
+            "statute"
+          ],
+          "first_occurrence_gloss": "",
+          "gloss_dutch": "een door de overheid vastgestelde regel",
+          "examples": "",
+          "ili": "",
+          "odwn_synset_id": ""
+        },
+        {
+          "sense_id": "recht-justice",
+          "preferred_english": "justice",
+          "domain": "philosophy",
+          "context_trigger": "PREDICATE context: in verbal constructions like \"recht doen\" = \"to do justice\"; abstract discussion of fairness and equity (not statutory law, not divine ordinance).",
+          "treatment": "Render",
+          "status": "approved",
+          "confidence": "medium",
+          "disallowed": [
+            "law",
+            "right"
+          ],
+          "first_occurrence_gloss": "",
+          "gloss_dutch": "gerechtigheid; recht doen",
+          "examples": "",
+          "ili": "",
+          "odwn_synset_id": ""
+        }
+      ]
+    }
   }
 }
