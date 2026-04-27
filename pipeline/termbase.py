@@ -108,9 +108,15 @@ class TermEntry:
             return {w for w in cleaned.split() if len(w) >= 3}
 
         context_words = _extract_words(context_text)
+        # Exclude the lemma itself from context matching to avoid false partial matches
+        # (e.g., trigger "rechter" partially matching context word "recht")
+        lemma = self.dutch.lower().strip()
+        context_words = {cw for cw in context_words if cw != lemma and not cw.startswith(lemma + "-") and not cw.endswith("-" + lemma)}
 
+        max_trigger_score = 0
         for sense in candidates:
             score = 0
+            trigger_score = 0
             # Status bonus (reduced so context can override)
             if sense.status == "locked":
                 score += 50
@@ -121,10 +127,17 @@ class TermEntry:
             trigger_words = _extract_words(sense.context_trigger)
             for tw in trigger_words:
                 if tw in context_words:
-                    score += 30
-                # Also check for partial matches (e.g., "staats-" matches "staat")
-                elif any(tw in cw or cw in tw for cw in context_words):
-                    score += 15
+                    trigger_score += 30
+                # Strict partial match: prefix/suffix of length >= 5 only
+                elif len(tw) >= 5 and any(
+                    (cw.startswith(tw) or cw.endswith(tw) or tw.startswith(cw) or tw.endswith(cw))
+                    for cw in context_words
+                ):
+                    trigger_score += 15
+
+            score += trigger_score
+            if trigger_score > max_trigger_score:
+                max_trigger_score = trigger_score
 
             # Domain keyword overlap (exclude the lemma itself to avoid bias)
             domain_keywords = {
@@ -149,6 +162,27 @@ class TermEntry:
             scored.append((score, sense))
 
         scored.sort(key=lambda x: x[0], reverse=True)
+
+        # If no triggers matched for ANY sense, fall back to default sense
+        if max_trigger_score == 0:
+            # Hardcoded defaults for known polysemous terms (most common sense in Kuyper's text)
+            defaults = {
+                "recht": "recht-right",
+                "volk": "volk-nation",
+                "geest": "geest-spirit",
+                "vermogen": "vermogen-power",
+            }
+            default_id = defaults.get(self.dutch.lower().strip())
+            if default_id:
+                for s in candidates:
+                    if s.sense_id == default_id:
+                        return s
+            # Fallback: first locked, then first approved, then first candidate
+            for s in candidates:
+                if s.status == "locked":
+                    return s
+            return candidates[0] if candidates else None
+
         return scored[0][1] if scored else None
 
 

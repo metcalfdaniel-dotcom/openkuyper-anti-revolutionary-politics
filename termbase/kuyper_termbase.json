@@ -1,7 +1,7 @@
 {
   "_meta": {
     "generated_by": "notion_worker",
-    "generated_at": "2026-04-24T19:27:13.160137+00:00",
+    "generated_at": "2026-04-27T17:29:28.221914+00:00",
     "total_terms": 79,
     "total_senses": 12
   },
@@ -191,7 +191,7 @@
           "sense_id": "recht-right",
           "preferred_english": "Right",
           "domain": "philosophy",
-          "context_trigger": "MORAL/THEOLOGICAL context: contrasted with 'Onrecht' (wrong/injustice); in the philosophical tetrad alongside Good, True, Beautiful; discussing divine ordinance, God's justice, natural law. 'Bron van het recht' when discussing God's ordinance = 'source of Right'. Capitalize when used as noun of art.",
+          "context_trigger": "bron god begrip categorie goede schoone ware antithese onrecht goddelijk ordinantie zelfstandig autonoom filosofisch moral theologisch rechtsbegrip",
           "treatment": "Render",
           "status": "locked",
           "confidence": "high",
@@ -210,7 +210,7 @@
           "sense_id": "recht-law",
           "preferred_english": "law",
           "domain": "law",
-          "context_trigger": "INSTITUTIONAL context: preceded by \"geschreven\", \"staats-\", \"burgerlijk\"; discussing courts, legislation, legal systems, positive law. \"Rechtsstaat\" = \"constitutional state\". \"Bron van het recht\" when discussing legislation = \"source of law\".",
+          "context_trigger": "geschreven positief burgerlijk privaat publiek gewoonte wetgeving grondwet rechtsstaat statuut wetboek juridisch wettelijk rechter staats adat gewoonterecht privaatrecht publiekrecht",
           "treatment": "Render",
           "status": "locked",
           "confidence": "high",
@@ -229,7 +229,7 @@
           "sense_id": "recht-justice",
           "preferred_english": "justice",
           "domain": "philosophy",
-          "context_trigger": "PREDICATE context: in verbal constructions like \"recht doen\" = \"to do justice\"; abstract discussion of fairness and equity (not statutory law, not divine ordinance).",
+          "context_trigger": "doen justice fairness equity rechtdoen rechtvaardigheid",
           "treatment": "Render",
           "status": "approved",
           "confidence": "medium",
